@@ -2,19 +2,36 @@
 
 import { useEffect, useState, useRef } from "react";
 
-const integrations = [
-  { name: "GitHub", category: "Version Control" },
-  { name: "Slack", category: "Communication" },
-  { name: "Stripe", category: "Payments" },
-  { name: "PostgreSQL", category: "Database" },
-  { name: "Redis", category: "Cache" },
-  { name: "AWS", category: "Cloud" },
-  { name: "MongoDB", category: "Database" },
-  { name: "Vercel", category: "Hosting" },
-  { name: "Figma", category: "Design" },
-  { name: "Linear", category: "Project Management" },
-  { name: "Notion", category: "Documentation" },
-  { name: "OpenAI", category: "AI/ML" },
+const integrationsRow1 = [
+  { name: "Tableau", icon: "https://aihive.global/wp-content/uploads/2026/02/Frame-1782-2.png" },
+  { name: "Databricks", icon: "https://aihive.global/wp-content/uploads/2026/02/Slack-2.png" },
+  { name: "MySQL", icon: "https://aihive.global/wp-content/uploads/2026/02/PDF-2.png" },
+  { name: "PostgreSQL", icon: "https://aihive.global/wp-content/uploads/2026/02/google-cloud-3.png" },
+  { name: "Snowflake", icon: "https://aihive.global/wp-content/uploads/2026/02/Data-Studio-1.png" },
+  { name: "Google Analytics", icon: "https://aihive.global/wp-content/uploads/2026/02/Office-4.png" },
+  { name: "MongoDB", icon: "https://aihive.global/wp-content/uploads/2026/02/Office-5.png" },
+  { name: "dotdigital", icon: "https://aihive.global/wp-content/uploads/2026/02/Frame-1782.png" },
+  { name: "Slack", icon: "https://aihive.global/wp-content/uploads/2026/02/Slack.png" },
+  { name: "PDF", icon: "https://aihive.global/wp-content/uploads/2026/02/PDF.png" },
+  { name: "Google Cloud", icon: "https://aihive.global/wp-content/uploads/2026/02/google-cloud.png" },
+  { name: "Data Studio", icon: "https://aihive.global/wp-content/uploads/2026/02/Data-Studio.png" },
+  { name: "Microsoft Office", icon: "https://aihive.global/wp-content/uploads/2026/02/Office.png" },
+  { name: "Excel", icon: "https://aihive.global/wp-content/uploads/2026/02/Office-1.png" },
+];
+
+const integrationsRow2 = [
+  { name: "Shopify", icon: "https://aihive.global/wp-content/uploads/2026/02/Frame-1782-3.png" },
+  { name: "BigCommerce", icon: "https://aihive.global/wp-content/uploads/2026/02/Slack-3.png" },
+  { name: "WooCommerce", icon: "https://aihive.global/wp-content/uploads/2026/02/PDF-3.png" },
+  { name: "Commerce Cloud", icon: "https://aihive.global/wp-content/uploads/2026/02/google-cloud-2.png" },
+  { name: "Commercetools", icon: "https://aihive.global/wp-content/uploads/2026/02/Data-Studio-2.png" },
+  { name: "Shopify Plus", icon: "https://aihive.global/wp-content/uploads/2026/02/Office-6.png" },
+  { name: "Magento", icon: "https://aihive.global/wp-content/uploads/2026/02/Office-7.png" },
+  { name: "Oracle", icon: "https://aihive.global/wp-content/uploads/2026/02/Office-3.png" },
+  { name: "Odoo", icon: "https://aihive.global/wp-content/uploads/2026/02/Frame-1782-1.png" },
+  { name: "Liferay", icon: "https://aihive.global/wp-content/uploads/2026/02/Slack-1.png" },
+  { name: "Lark", icon: "https://aihive.global/wp-content/uploads/2026/02/PDF-1.png" },
+  { name: "Zoho", icon: "https://aihive.global/wp-content/uploads/2026/02/google-cloud-1.png" },
 ];
 
 export function IntegrationsSection() {
@@ -48,12 +65,12 @@ export function IntegrationsSection() {
             <span className="w-8 h-px bg-foreground/30" />
           </span>
           <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-6">
-            Works with everything
+            Built for Enterprises That
             <br />
-            you already use.
+            Take AI Seriously
           </h2>
           <p className="text-xl text-muted-foreground">
-            200+ pre-built integrations. Connect your entire stack in minutes.
+            Oriagent integrates securely with enterprise data sources to power scalable, production-ready AI agents.
           </p>
         </div>
 
@@ -64,15 +81,16 @@ export function IntegrationsSection() {
         <div className="flex gap-6 marquee">
           {[...Array(2)].map((_, setIndex) => (
             <div key={setIndex} className="flex gap-6 shrink-0">
-              {integrations.map((integration) => (
+              {integrationsRow1.map((integration) => (
                 <div
                   key={`${integration.name}-${setIndex}`}
-                  className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
+                  className="shrink-0 px-6 py-4 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group flex items-center justify-center"
                 >
-                  <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">
-                    {integration.name}
-                  </div>
-                  <div className="text-sm text-muted-foreground">{integration.category}</div>
+                  <img 
+                    src={integration.icon} 
+                    alt={integration.name}
+                    className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
+                  />
                 </div>
               ))}
             </div>
@@ -85,15 +103,16 @@ export function IntegrationsSection() {
         <div className="flex gap-6 marquee-reverse">
           {[...Array(2)].map((_, setIndex) => (
             <div key={setIndex} className="flex gap-6 shrink-0">
-              {[...integrations].reverse().map((integration) => (
+              {integrationsRow2.map((integration) => (
                 <div
                   key={`${integration.name}-reverse-${setIndex}`}
-                  className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
+                  className="shrink-0 px-6 py-4 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group flex items-center justify-center"
                 >
-                  <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">
-                    {integration.name}
-                  </div>
-                  <div className="text-sm text-muted-foreground">{integration.category}</div>
+                  <img 
+                    src={integration.icon} 
+                    alt={integration.name}
+                    className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
+                  />
                 </div>
               ))}
             </div>
