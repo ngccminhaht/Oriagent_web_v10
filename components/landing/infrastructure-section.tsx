@@ -4,33 +4,33 @@ import { useEffect, useState, useRef } from "react";
 
 const enterpriseNeeds = [
   {
-    title: "Shift from Shopping Applications to Personal Assistants",
-    description: "Each customer, when using a service, does not simply interact with an application, but is supported by a personal AI assistant that understands context, behavior, and individual needs throughout the entire customer lifecycle.",
+    title: "Personal AI Assistants",
+    description: "Transform customer interactions with AI that understands context and individual needs.",
     side: "left",
   },
   {
-    title: "Learning Capability & User Understanding",
-    description: "Each personal AI assistant must be equipped with the ability to continuously learn from real user interactions and new data, enabling deeper understanding of user behavior, goals, and latent needs.",
+    title: "Learning & Understanding",
+    description: "AI that continuously learns from interactions to understand user behavior and goals.",
     side: "left",
   },
   {
     title: "AI Control & Governance",
-    description: "As AI Agents become deeply embedded in operations, organizations must establish a robust AI governance framework to control behavior, manage automation permissions, enable monitoring and timely intervention, and ensure compliance with legal, ethical, and business objectives.",
+    description: "Robust framework to control AI behavior, manage permissions, and ensure compliance.",
     side: "left",
   },
   {
-    title: "Adaptive Network Architecture (AI Agent System)",
-    description: "Establish a tightly connected network between Users – Products/Services – AI Agents, enabling maximum leverage of network effects and helping the system become increasingly intelligent, efficient, and value-generating.",
+    title: "Adaptive Network Architecture",
+    description: "Connected network between Users, Products, and AI Agents for maximum efficiency.",
     side: "right",
   },
   {
-    title: "Operational Organization Model",
-    description: "Organize around a new development and operating model, featuring close and flexible collaboration between humans and machines, applying the Human-in-the-loop principle to ensure accuracy, safety, and controllability.",
+    title: "Operational Organization",
+    description: "Human-in-the-loop collaboration between humans and machines for safety and accuracy.",
     side: "right",
   },
   {
-    title: "Data – Knowledge",
-    description: "Upgrade data awareness and transform how data is organized and exploited, turning data from a 'static resource' into a 'living source' that is continuously updated, learned from, and converted into knowledge to serve AI Agents.",
+    title: "Data to Knowledge",
+    description: "Transform static data into living knowledge that continuously serves AI Agents.",
     side: "right",
   },
 ];
@@ -69,11 +69,11 @@ export function InfrastructureSection() {
         {/* 6 Boxes Grid - 3 left, 3 right */}
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Left Column */}
-          <div className="flex flex-col gap-6">
+          <div className="grid grid-rows-3 gap-6">
             {leftItems.map((item, index) => (
               <div
                 key={item.title}
-                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 ${
+                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 flex flex-col justify-center aspect-[3/2] lg:aspect-[2/1] ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
@@ -91,11 +91,11 @@ export function InfrastructureSection() {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-6">
+          <div className="grid grid-rows-3 gap-6">
             {rightItems.map((item, index) => (
               <div
                 key={item.title}
-                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 ${
+                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 flex flex-col justify-center aspect-[3/2] lg:aspect-[2/1] ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
