@@ -4,32 +4,32 @@ import { useEffect, useState } from "react";
 
 const testimonials = [
   {
-    quote: "Oriagent transformed our deployment pipeline. What used to take hours now happens in seconds.",
-    author: "Sarah Chen",
+    quote: "OriAgent turned our AI experiments into real production systems. We went from scattered tools to a unified AI infrastructure.",
+    author: "David Chen",
     role: "CTO",
-    company: "Meridian Labs",
-    metric: "10x faster deployments",
+    company: "Nexus Digital",
+    metric: "85% faster AI deployment",
   },
   {
-    quote: "The developer experience is unmatched. Our team's productivity has never been higher.",
-    author: "Marcus Webb",
-    role: "Engineering Lead",
-    company: "Flux Systems",
-    metric: "40% more features shipped",
+    quote: "Managing AI agents across teams used to be chaos. OriAgent gave us governance, visibility, and full control.",
+    author: "Sarah Mitchell",
+    role: "Head of AI Platform",
+    company: "CloudBridge",
+    metric: "120+ agents managed centrally",
   },
   {
-    quote: "Finally, infrastructure that scales with our ambition. Zero downtime since we switched.",
-    author: "Elena Rodriguez",
+    quote: "Finally, a platform that lets enterprises scale AI safely. Security and compliance were built in from day one.",
+    author: "Michael Alvarez",
     role: "VP Engineering",
+    company: "DataForge",
+    metric: "Enterprise-grade security compliance",
+  },
+  {
+    quote: "OriAgent made AI automation reliable at scale. What used to break in production now runs continuously.",
+    author: "Elena Rodriguez",
+    role: "Director of Technology",
     company: "Beacon AI",
     metric: "99.99% uptime",
-  },
-  {
-    quote: "The integrations are seamless. We connected our entire stack in a single afternoon.",
-    author: "James Liu",
-    role: "Founder",
-    company: "Prism Analytics",
-    metric: "50+ integrations used",
   },
 ];
 
@@ -148,7 +148,7 @@ export function TestimonialsSection() {
         <div className="flex gap-16 items-center marquee">
           {[...Array(2)].map((_, setIdx) => (
             <div key={setIdx} className="flex gap-16 items-center shrink-0">
-              {["Meridian Labs", "Flux Systems", "Beacon AI", "Prism Analytics", "Nova Tech", "Quantum Corp", "Atlas Digital", "Vertex Labs"].map(
+              {["Nexus Digital", "CloudBridge", "DataForge", "Beacon AI", "Nova Tech", "Quantum Corp", "Atlas Digital", "Vertex Labs"].map(
                 (company) => (
                   <span
                     key={`${setIdx}-${company}`}
