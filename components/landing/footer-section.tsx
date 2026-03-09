@@ -58,7 +58,7 @@ export function FooterSection() {
               </a>
 
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs">
-                The platform for teams who ship. Build, deploy, and scale with unprecedented velocity.
+                The AI platform for teams who ship. Build, deploy, and scale with unprecedented velocity.
               </p>
 
               {/* Social Links */}

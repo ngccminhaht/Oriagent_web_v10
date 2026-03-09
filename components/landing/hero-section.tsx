@@ -64,7 +64,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
             <span className="w-8 h-px bg-foreground/30" />
-            The platform for modern teams
+            The AI platform for modern teams
           </span>
         </div>
         
@@ -75,7 +75,7 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block">The platform</span>
+            <span className="block">The AI platform</span>
             <span className="block">
               to{" "}
               <span className="relative inline-block">
