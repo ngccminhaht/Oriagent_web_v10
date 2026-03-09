@@ -113,7 +113,7 @@ export function InfrastructureSection() {
             {leftItems.map((item, index) => (
               <div
                 key={item.title}
-                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 ${
+                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 rounded-[10px] ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
@@ -137,7 +137,7 @@ export function InfrastructureSection() {
             {rightItems.map((item, index) => (
               <div
                 key={item.title}
-                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 ${
+                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 rounded-[10px] ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"

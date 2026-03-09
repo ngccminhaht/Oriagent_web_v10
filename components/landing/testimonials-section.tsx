@@ -100,7 +100,7 @@ export function TestimonialsSection() {
           {/* Metric Highlight */}
           <div className="lg:col-span-4 flex flex-col justify-center">
             <div
-              className={`p-8 border border-foreground/10 transition-all duration-300 ${
+              className={`p-8 border border-foreground/10 rounded-[10px] transition-all duration-300 ${
                 isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
               }`}
             >

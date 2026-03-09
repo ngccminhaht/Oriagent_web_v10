@@ -101,23 +101,23 @@ export function PricingSection() {
             Annual
           </span>
           {isAnnual && (
-            <span className="ml-2 px-2 py-1 bg-foreground text-primary-foreground text-xs font-mono">
+            <span className="ml-2 px-2 py-1 bg-foreground text-primary-foreground text-xs font-mono rounded-[10px]">
               Save 17%
             </span>
           )}
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-px bg-foreground/10">
+        <div className="grid md:grid-cols-3 gap-px bg-foreground/10 rounded-[10px] overflow-hidden">
           {plans.map((plan, idx) => (
             <div
               key={plan.name}
-              className={`relative p-8 lg:p-12 bg-background ${
+              className={`relative p-8 lg:p-12 bg-background rounded-[10px] ${
                 plan.popular ? "md:-my-4 md:py-12 lg:py-16 border-2 border-foreground" : ""
               }`}
             >
               {plan.popular && (
-                <span className="absolute -top-3 left-8 px-3 py-1 bg-foreground text-primary-foreground text-xs font-mono uppercase tracking-widest">
+                <span className="absolute -top-3 left-8 px-3 py-1 bg-foreground text-primary-foreground text-xs font-mono uppercase tracking-widest rounded-[10px]">
                   Most Popular
                 </span>
               )}
@@ -157,7 +157,7 @@ export function PricingSection() {
 
               {/* CTA */}
               <button
-                className={`w-full py-4 flex items-center justify-center gap-2 text-sm font-medium transition-all group ${
+                className={`w-full py-4 flex items-center justify-center gap-2 text-sm font-medium transition-all group rounded-[10px] ${
                   plan.popular
                     ? "bg-foreground text-primary-foreground hover:bg-foreground/90"
                     : "border border-foreground/20 text-foreground hover:border-foreground hover:bg-foreground/5"

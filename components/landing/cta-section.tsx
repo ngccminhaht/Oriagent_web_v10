@@ -34,7 +34,7 @@ export function CtaSection() {
     <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div
-          className={`relative border border-foreground transition-all duration-1000 ${
+          className={`relative border border-foreground rounded-[10px] transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           onMouseMove={handleMouseMove}
