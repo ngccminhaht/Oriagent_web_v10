@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 const features = [
   {
     number: "01",
-    title: "Instant Deployment",
-    description: "Push to production in seconds. Our edge network ensures your applications load instantly, anywhere in the world.",
+    title: "Instant Training Data",
+    description: "Upload your datasets in seconds. Our edge network guarantees the data is instantly accessible for training, anywhere in the world.",
     visual: "deploy",
   },
   {
