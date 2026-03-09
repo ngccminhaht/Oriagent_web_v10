@@ -90,52 +90,24 @@ export function HowItWorksSection() {
             <span className="w-8 h-px bg-background/30" />
             Solution
           </span>
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
-            {/* Left column */}
-            <div>
-              <h2
-                className={`text-4xl lg:text-5xl font-display tracking-tight transition-all duration-700 mb-6 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-              >
-                AI Adoption Is High.
-                <br />
-                <span className="text-background/50">Enterprise AI Success Is Not.</span>
-              </h2>
-              <p className="text-background/60 text-lg leading-relaxed mb-8">
-                93% of enterprises have experimented with AI, yet fewer than 12% have managed to scale it beyond isolated proof-of-concepts. The gap between a promising pilot and real enterprise value remains stubbornly wide.
-              </p>
-              <img 
-                src="https://aihive.global/wp-content/uploads/2026/02/Group-1784.png" 
-                alt="Enterprise AI statistics" 
-                className="hidden lg:block max-w-[352px]"
-              />
-            </div>
-            
-            {/* Right column - 3 Steps */}
-            <div className="space-y-0">
-              {steps.map((step, index) => (
-                <div
-                  key={step.number}
-                  className={`py-6 border-b border-background/10 transition-all duration-500 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  }`}
-                  style={{ transitionDelay: `${index * 150}ms` }}
-                >
-                  <div className="flex items-start gap-6">
-                    <span className="font-display text-2xl text-background/30">{step.number}</span>
-                    <div className="flex-1">
-                      <h3 className="text-xl lg:text-2xl font-display mb-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-background/60 leading-relaxed text-sm lg:text-base">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div>
+            <h2
+              className={`text-4xl lg:text-5xl font-display tracking-tight transition-all duration-700 mb-6 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              AI Adoption Is High.
+              <br />
+              <span className="text-background/50">Enterprise AI Success Is Not.</span>
+            </h2>
+            <p className="text-background/60 text-lg leading-relaxed mb-8 max-w-2xl">
+              93% of enterprises have experimented with AI, yet fewer than 12% have managed to scale it beyond isolated proof-of-concepts. The gap between a promising pilot and real enterprise value remains stubbornly wide.
+            </p>
+            <img 
+              src="https://aihive.global/wp-content/uploads/2026/02/Group-1784.png" 
+              alt="Enterprise AI statistics" 
+              className="hidden lg:block max-w-[352px]"
+            />
           </div>
         </div>
 
