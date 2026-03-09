@@ -112,27 +112,29 @@ export function HowItWorksSection() {
               />
             </div>
             
-            {/* Right column - AI projects stall because */}
-            <div>
-              <h3 className="text-xl font-display mb-6 text-background/80">AI projects stall because:</h3>
-              <ul className="space-y-4">
-                {[
-                  "AI tools are fragmented and uncoordinated",
-                  "Agents lack governance and control",
-                  "Security and compliance risks block deployment",
-                  "Automation breaks at scale",
-                  "Experiments never reach production"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0 mt-0.5">
-                      <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#EF463D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M12 8V13" stroke="#EF463D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M11.9945 16H12.0035" stroke="#EF463D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <span className="text-background/70">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Right column - 3 Steps */}
+            <div className="space-y-0">
+              {steps.map((step, index) => (
+                <div
+                  key={step.number}
+                  className={`py-6 border-b border-background/10 transition-all duration-500 ${
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                >
+                  <div className="flex items-start gap-6">
+                    <span className="font-display text-2xl text-background/30">{step.number}</span>
+                    <div className="flex-1">
+                      <h3 className="text-xl lg:text-2xl font-display mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-background/60 leading-relaxed text-sm lg:text-base">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
