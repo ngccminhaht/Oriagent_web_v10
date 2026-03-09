@@ -90,15 +90,51 @@ export function HowItWorksSection() {
             <span className="w-8 h-px bg-background/30" />
             Solution
           </span>
-          <h2
-            className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            Integrate AI Agents,
-            <br />
-            <span className="text-background/50">endless possibilities.</span>
-          </h2>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
+            {/* Left column */}
+            <div>
+              <h2
+                className={`text-4xl lg:text-5xl font-display tracking-tight transition-all duration-700 mb-6 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+              >
+                AI Adoption Is High.
+                <br />
+                <span className="text-background/50">Enterprise AI Success Is Not.</span>
+              </h2>
+              <p className="text-background/60 text-lg leading-relaxed mb-8">
+                93% of enterprises have experimented with AI, yet fewer than 12% have managed to scale it beyond isolated proof-of-concepts. The gap between a promising pilot and real enterprise value remains stubbornly wide.
+              </p>
+              <img 
+                src="https://aihive.global/wp-content/uploads/2026/02/Group-1784.png" 
+                alt="Enterprise AI statistics" 
+                className="hidden lg:block max-w-[352px]"
+              />
+            </div>
+            
+            {/* Right column - AI projects stall because */}
+            <div>
+              <h3 className="text-xl font-display mb-6 text-background/80">AI projects stall because:</h3>
+              <ul className="space-y-4">
+                {[
+                  "AI tools are fragmented and uncoordinated",
+                  "Agents lack governance and control",
+                  "Security and compliance risks block deployment",
+                  "Automation breaks at scale",
+                  "Experiments never reach production"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0 mt-0.5">
+                      <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#EF463D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M12 8V13" stroke="#EF463D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M11.9945 16H12.0035" stroke="#EF463D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <span className="text-background/70">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Main content */}
