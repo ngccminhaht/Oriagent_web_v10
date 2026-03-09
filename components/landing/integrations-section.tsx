@@ -84,7 +84,7 @@ export function IntegrationsSection() {
               {integrationsRow1.map((integration) => (
                 <div
                   key={`${integration.name}-${setIndex}`}
-                  className="shrink-0 px-6 py-4 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group flex items-center justify-center"
+                  className="shrink-0 px-6 py-4 bg-white border border-foreground/10 hover:border-foreground/30 transition-all duration-300 group flex items-center justify-center"
                 >
                   <img 
                     src={integration.icon} 
@@ -106,7 +106,7 @@ export function IntegrationsSection() {
               {integrationsRow2.map((integration) => (
                 <div
                   key={`${integration.name}-reverse-${setIndex}`}
-                  className="shrink-0 px-6 py-4 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group flex items-center justify-center"
+                  className="shrink-0 px-6 py-4 bg-white border border-foreground/10 hover:border-foreground/30 transition-all duration-300 group flex items-center justify-center"
                 >
                   <img 
                     src={integration.icon} 
