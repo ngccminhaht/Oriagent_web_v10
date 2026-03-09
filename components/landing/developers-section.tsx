@@ -1,98 +1,49 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { Copy, Check } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
-const codeExamples = [
+const solutionItems = [
   {
-    label: "Install",
-    code: `npm install @oriagent/sdk
-
-# or
-yarn add @oriagent/sdk
-pnpm add @oriagent/sdk`,
+    number: 1,
+    title: "Data Connectors",
+    description: "SharePoint, OneDrive\nGoogle Drive\nAmazon S3\nSnowflake and other data warehouses",
+    side: "left",
   },
   {
-    label: "Initialize",
-    code: `import { Oriagent } from '@oriagent/sdk'
-
-const oriagent = new Oriagent({
-  apiKey: process.env.ORIAGENT_KEY
-})`,
+    number: 2,
+    title: "AI Models",
+    description: "OpenAI, Anthropic, Meta, Mistral\nGroq, Gemini, Local MML, Deepseek, Kimi\nDeepgram, ElevenLabs",
+    side: "left",
   },
   {
-    label: "Deploy",
-    code: `const app = await oriagent.deploy({
-  name: 'my-app',
-  region: 'auto',
-  scaling: {
-    min: 1,
-    max: 100
-  }
-})
-
-console.log('Live at:', app.url)`,
+    number: 3,
+    title: "Pre-built Interfaces",
+    description: "Chat interface\nBatch processing\nSmart forms\nVoice assistants\nWebsite chatbots",
+    side: "left",
+  },
+  {
+    number: 4,
+    title: "Governance",
+    description: "AI guardrails, PII masking\nRole-Based Access Control (RBAC)\nGroup management\nSingle Sign-On (SSO)",
+    side: "right",
+  },
+  {
+    number: 5,
+    title: "Analytics",
+    description: "Performance analytics\nConversation tracking\nAutomated report generation",
+    side: "right",
+  },
+  {
+    number: 6,
+    title: "Skills & Integrations",
+    description: "Native CRM/ERP integrations, enterprise\ntool support, API-first architecture, and AI\nAgents that execute real actions across\nbusiness systems.",
+    side: "right",
   },
 ];
-
-const features = [
-  { 
-    title: "TypeScript native", 
-    description: "Full type safety with auto-generated types."
-  },
-  { 
-    title: "Zero config", 
-    description: "Sensible defaults that just work."
-  },
-  { 
-    title: "Edge-ready", 
-    description: "Runs anywhere: Node, Deno, Bun, browsers."
-  },
-  { 
-    title: "12KB gzipped", 
-    description: "Lightweight with zero dependencies."
-  },
-];
-
-const codeAnimationStyles = `
-  .dev-code-line {
-    opacity: 0;
-    transform: translateX(-8px);
-    animation: devLineReveal 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-  
-  @keyframes devLineReveal {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  .dev-code-char {
-    opacity: 0;
-    filter: blur(8px);
-    animation: devCharReveal 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-  
-  @keyframes devCharReveal {
-    to {
-      opacity: 1;
-      filter: blur(0);
-    }
-  }
-`;
 
 export function DevelopersSection() {
-  const [activeTab, setActiveTab] = useState(0);
-  const [copied, setCopied] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(codeExamples[activeTab].code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -106,126 +57,140 @@ export function DevelopersSection() {
     return () => observer.disconnect();
   }, []);
 
+  const leftItems = solutionItems.filter((item) => item.side === "left");
+  const rightItems = solutionItems.filter((item) => item.side === "right");
+
   return (
-    <section id="developers" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
-      <style dangerouslySetInnerHTML={{ __html: codeAnimationStyles }} />
+    <section
+      id="developers"
+      ref={sectionRef}
+      className="relative py-24 lg:py-32 overflow-hidden bg-[#f5f5f5]"
+    >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          {/* Left: Content */}
-          <div
-            className={`transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+        {/* Header */}
+        <div
+          className={`text-center mb-16 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <h2 className="text-3xl lg:text-5xl font-display tracking-tight text-foreground">
+            SOLUTION
+          </h2>
+        </div>
+
+        {/* Main Grid Layout */}
+        <div className="relative">
+          {/* Center Logo */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <div
+              className={`w-24 h-24 lg:w-32 lg:h-32 bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-700 delay-300 ${
+                isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+              }`}
+            >
+              <img
+                src="/logo_oriagent.svg"
+                alt="Oriagent"
+                className="h-16 lg:h-20 w-auto"
+              />
+            </div>
+          </div>
+
+          {/* Connecting Lines SVG */}
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            preserveAspectRatio="none"
           >
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-              <span className="w-8 h-px bg-foreground/30" />
-              For developers
-            </span>
-            <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Built by devs.
-              <br />
-              <span className="text-muted-foreground">For devs.</span>
-            </h2>
-            <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-              A thoughtfully designed SDK that gets out of your way. 
-              Ship faster with intuitive APIs and exceptional documentation.
-            </p>
-            
-            {/* Features */}
-            <div className="grid grid-cols-2 gap-6">
-              {features.map((feature, index) => (
+            {/* Vertical center line */}
+            <line
+              x1="50%"
+              y1="0"
+              x2="50%"
+              y2="100%"
+              stroke="#d1d5db"
+              strokeWidth="1"
+              strokeDasharray="4 4"
+            />
+            {/* Horizontal center line */}
+            <line
+              x1="0"
+              y1="50%"
+              x2="100%"
+              y2="50%"
+              stroke="#d1d5db"
+              strokeWidth="1"
+              strokeDasharray="4 4"
+            />
+          </svg>
+
+          {/* Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-16 relative">
+            {/* Left Column */}
+            <div className="flex flex-col gap-12 lg:gap-16">
+              {leftItems.map((item, index) => (
                 <div
-                  key={feature.title}
-                  className={`transition-all duration-500 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  key={item.number}
+                  className={`flex items-start gap-4 transition-all duration-500 ${
+                    isVisible
+                      ? "opacity-100 translate-x-0"
+                      : "opacity-0 -translate-x-8"
                   }`}
-                  style={{ transitionDelay: `${index * 50 + 200}ms` }}
+                  style={{ transitionDelay: `${index * 100 + 200}ms` }}
                 >
-                  <h3 className="font-medium mb-1">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <div className="flex-1 text-right">
+                    <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm lg:text-base text-muted-foreground whitespace-pre-line leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-foreground text-background flex items-center justify-center font-bold text-sm lg:text-base"
+                      style={{
+                        clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                      }}
+                    >
+                      {item.number}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-          
-          {/* Right: Code block */}
-          <div
-            className={`lg:sticky lg:top-32 transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-            }`}
-          >
-            <div className="border border-foreground/10">
-              {/* Tabs */}
-              <div className="flex items-center border-b border-foreground/10">
-                {codeExamples.map((example, idx) => (
-                  <button
-                    key={example.label}
-                    type="button"
-                    onClick={() => setActiveTab(idx)}
-                    className={`px-6 py-4 text-sm font-mono transition-colors relative ${
-                      activeTab === idx
-                        ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {example.label}
-                    {activeTab === idx && (
-                      <span className="absolute bottom-0 left-0 right-0 h-px bg-foreground" />
-                    )}
-                  </button>
-                ))}
-                <div className="flex-1" />
-                <button
-                  type="button"
-                  onClick={handleCopy}
-                  className="px-4 py-4 text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="Copy code"
+
+            {/* Center Column - Spacer for logo */}
+            <div className="hidden lg:flex items-center justify-center min-h-[400px]" />
+
+            {/* Right Column */}
+            <div className="flex flex-col gap-12 lg:gap-16">
+              {rightItems.map((item, index) => (
+                <div
+                  key={item.number}
+                  className={`flex items-start gap-4 transition-all duration-500 ${
+                    isVisible
+                      ? "opacity-100 translate-x-0"
+                      : "opacity-0 translate-x-8"
+                  }`}
+                  style={{ transitionDelay: `${index * 100 + 200}ms` }}
                 >
-                  {copied ? (
-                    <Check className="w-4 h-4 text-green-600" />
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
-                </button>
-              </div>
-              
-              {/* Code content */}
-              <div className="p-8 font-mono text-sm bg-foreground/[0.01] min-h-[220px]">
-                <pre className="text-foreground/80">
-                  {codeExamples[activeTab].code.split('\n').map((line, lineIndex) => (
-                    <div 
-                      key={`${activeTab}-${lineIndex}`} 
-                      className="leading-loose dev-code-line"
-                      style={{ animationDelay: `${lineIndex * 80}ms` }}
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-foreground text-background flex items-center justify-center font-bold text-sm lg:text-base"
+                      style={{
+                        clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                      }}
                     >
-                      <span className="inline-flex">
-                        {line.split('').map((char, charIndex) => (
-                          <span
-                            key={`${activeTab}-${lineIndex}-${charIndex}`}
-                            className="dev-code-char"
-                            style={{
-                              animationDelay: `${lineIndex * 80 + charIndex * 15}ms`,
-                            }}
-                          >
-                            {char === ' ' ? '\u00A0' : char}
-                          </span>
-                        ))}
-                      </span>
+                      {item.number}
                     </div>
-                  ))}
-                </pre>
-              </div>
-            </div>
-            
-            {/* Links */}
-            <div className="mt-6 flex items-center gap-6 text-sm">
-              <a href="#" className="text-foreground hover:underline underline-offset-4">
-                Read the docs
-              </a>
-              <span className="text-foreground/20">|</span>
-              <a href="#" className="text-muted-foreground hover:text-foreground">
-                View on GitHub
-              </a>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm lg:text-base text-muted-foreground whitespace-pre-line leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
