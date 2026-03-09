@@ -60,6 +60,22 @@ export function DevelopersSection() {
       ref={sectionRef}
       className="relative py-24 lg:py-32 overflow-hidden bg-[#f5f5f5]"
     >
+      {/* CSS for animated dashed lines */}
+      <style jsx>{`
+        @keyframes dash-flow {
+          0% {
+            stroke-dashoffset: 20;
+          }
+          100% {
+            stroke-dashoffset: 0;
+          }
+        }
+        .animated-dash {
+          stroke-dasharray: 8 4;
+          animation: dash-flow 0.8s linear infinite;
+        }
+      `}</style>
+
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div
@@ -91,30 +107,81 @@ export function DevelopersSection() {
             </div>
           </div>
 
-          {/* Connecting Lines SVG */}
+          {/* Animated Connecting Lines SVG */}
           <svg
-            className="absolute inset-0 w-full h-full pointer-events-none"
-            preserveAspectRatio="none"
+            className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block"
+            style={{ zIndex: 5 }}
           >
-            {/* Vertical center line */}
+            {/* Left side lines - Data Connectors (top) */}
             <line
-              x1="50%"
-              y1="0"
+              x1="33%"
+              y1="12%"
               x2="50%"
-              y2="100%"
-              stroke="#d1d5db"
-              strokeWidth="1"
-              strokeDasharray="4 4"
-            />
-            {/* Horizontal center line */}
-            <line
-              x1="0"
-              y1="50%"
-              x2="100%"
               y2="50%"
-              stroke="#d1d5db"
-              strokeWidth="1"
-              strokeDasharray="4 4"
+              stroke="#374151"
+              strokeWidth="1.5"
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: '400ms' }}
+            />
+            
+            {/* Left side lines - AI Models (middle) */}
+            <line
+              x1="33%"
+              y1="50%"
+              x2="50%"
+              y2="50%"
+              stroke="#374151"
+              strokeWidth="1.5"
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: '500ms' }}
+            />
+            
+            {/* Left side lines - Pre-built Interfaces (bottom) */}
+            <line
+              x1="33%"
+              y1="88%"
+              x2="50%"
+              y2="50%"
+              stroke="#374151"
+              strokeWidth="1.5"
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: '600ms' }}
+            />
+            
+            {/* Right side lines - Governance (top) */}
+            <line
+              x1="67%"
+              y1="12%"
+              x2="50%"
+              y2="50%"
+              stroke="#374151"
+              strokeWidth="1.5"
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: '700ms' }}
+            />
+            
+            {/* Right side lines - Analytics (middle) */}
+            <line
+              x1="67%"
+              y1="50%"
+              x2="50%"
+              y2="50%"
+              stroke="#374151"
+              strokeWidth="1.5"
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: '800ms' }}
+            />
+            
+            {/* Right side lines - Skills & Integrations (bottom) */}
+            <line
+              x1="67%"
+              y1="88%"
+              x2="50%"
+              y2="50%"
+              stroke="#374151"
+              strokeWidth="1.5"
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: '900ms' }}
             />
           </svg>
 
