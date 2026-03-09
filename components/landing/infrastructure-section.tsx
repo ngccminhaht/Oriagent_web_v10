@@ -2,18 +2,41 @@
 
 import { useEffect, useState, useRef } from "react";
 
-const locations = [
-  { city: "San Francisco", region: "US West", latency: "12ms" },
-  { city: "New York", region: "US East", latency: "18ms" },
-  { city: "London", region: "Europe", latency: "24ms" },
-  { city: "Tokyo", region: "Asia Pacific", latency: "32ms" },
-  { city: "Sydney", region: "Oceania", latency: "45ms" },
-  { city: "Sao Paulo", region: "South America", latency: "38ms" },
+const enterpriseNeeds = [
+  {
+    title: "Shift from Shopping Applications to Personal Assistants",
+    description: "Each customer, when using a service, does not simply interact with an application, but is supported by a personal AI assistant that understands context, behavior, and individual needs throughout the entire customer lifecycle.",
+    side: "left",
+  },
+  {
+    title: "Learning Capability & User Understanding",
+    description: "Each personal AI assistant must be equipped with the ability to continuously learn from real user interactions and new data, enabling deeper understanding of user behavior, goals, and latent needs.",
+    side: "left",
+  },
+  {
+    title: "AI Control & Governance",
+    description: "As AI Agents become deeply embedded in operations, organizations must establish a robust AI governance framework to control behavior, manage automation permissions, enable monitoring and timely intervention, and ensure compliance with legal, ethical, and business objectives.",
+    side: "left",
+  },
+  {
+    title: "Adaptive Network Architecture (AI Agent System)",
+    description: "Establish a tightly connected network between Users – Products/Services – AI Agents, enabling maximum leverage of network effects and helping the system become increasingly intelligent, efficient, and value-generating.",
+    side: "right",
+  },
+  {
+    title: "Operational Organization Model",
+    description: "Organize around a new development and operating model, featuring close and flexible collaboration between humans and machines, applying the Human-in-the-loop principle to ensure accuracy, safety, and controllability.",
+    side: "right",
+  },
+  {
+    title: "Data – Knowledge",
+    description: "Upgrade data awareness and transform how data is organized and exploited, turning data from a 'static resource' into a 'living source' that is continuously updated, learned from, and converted into knowledge to serve AI Agents.",
+    side: "right",
+  },
 ];
 
 export function InfrastructureSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeLocation, setActiveLocation] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -28,95 +51,65 @@ export function InfrastructureSection() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveLocation((prev) => (prev + 1) % locations.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
+  const leftItems = enterpriseNeeds.filter((item) => item.side === "left");
+  const rightItems = enterpriseNeeds.filter((item) => item.side === "right");
 
   return (
     <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left: Content */}
-          <div
-            className={`transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-            }`}
-          >
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-              <span className="w-8 h-px bg-foreground/30" />
-              Infrastructure
-            </span>
-            <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Global by
-              <br />
-              default.
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              Deploy once, run everywhere. Our edge network spans 17 data centers 
-              across 6 continents, delivering sub-50ms latency to 99% of the world.
-            </p>
+        {/* Header */}
+        <div className="text-center mb-16 lg:mb-24">
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
+            <span className="w-8 h-px bg-foreground/30" />
+            Enterprises Need
+            <span className="w-8 h-px bg-foreground/30" />
+          </span>
+        </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8">
-              <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">17</div>
-                <div className="text-sm text-muted-foreground">Data centers</div>
+        {/* 6 Boxes Grid - 3 left, 3 right */}
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
+          {/* Left Column */}
+          <div className="flex flex-col gap-6">
+            {leftItems.map((item, index) => (
+              <div
+                key={item.title}
+                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <h3 className="text-lg lg:text-xl font-display mb-3 text-foreground">
+                  {item.title}
+                </h3>
+                <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">99.99%</div>
-                <div className="text-sm text-muted-foreground">Uptime SLA</div>
-              </div>
-              <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">&lt;50ms</div>
-                <div className="text-sm text-muted-foreground">Global latency</div>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Right: Location list */}
-          <div
-            className={`transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-            }`}
-          >
-            <div className="border border-foreground/10">
-              {/* Header */}
-              <div className="px-6 py-4 border-b border-foreground/10 flex items-center justify-between">
-                <span className="text-sm font-mono text-muted-foreground">Edge Network</span>
-                <span className="flex items-center gap-2 text-xs font-mono text-green-600">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  All operational
-                </span>
+          {/* Right Column */}
+          <div className="flex flex-col gap-6">
+            {rightItems.map((item, index) => (
+              <div
+                key={item.title}
+                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${(index + 3) * 100}ms` }}
+              >
+                <h3 className="text-lg lg:text-xl font-display mb-3 text-foreground">
+                  {item.title}
+                </h3>
+                <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-
-              {/* Locations */}
-              <div>
-                {locations.map((location, index) => (
-                  <div
-                    key={location.city}
-                    className={`px-6 py-5 border-b border-foreground/5 last:border-b-0 flex items-center justify-between transition-all duration-300 ${
-                      activeLocation === index ? "bg-foreground/[0.02]" : ""
-                    }`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <span 
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                          activeLocation === index ? "bg-foreground" : "bg-foreground/20"
-                        }`}
-                      />
-                      <div>
-                        <div className="font-medium">{location.city}</div>
-                        <div className="text-sm text-muted-foreground">{location.region}</div>
-                      </div>
-                    </div>
-                    <span className="font-mono text-sm text-muted-foreground">{location.latency}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
