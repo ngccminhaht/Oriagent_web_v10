@@ -6,7 +6,7 @@ import { AnimatedWave } from "./animated-wave";
 const footerLinks = {
   Product: [
     { name: "Features", href: "#features" },
-    { name: "How it works", href: "#how-it-works" },
+    { name: "Problem", href: "#how-it-works" },
     { name: "Pricing", href: "#pricing" },
     { name: "Integrations", href: "#integrations" },
   ],

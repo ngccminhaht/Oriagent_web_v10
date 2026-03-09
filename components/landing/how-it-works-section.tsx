@@ -60,7 +60,7 @@ export function HowItWorksSection() {
         <div className="mb-12">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-background/50 mb-6">
             <span className="w-8 h-px bg-background/30" />
-            Solution
+            Problem
           </span>
         </div>
 
