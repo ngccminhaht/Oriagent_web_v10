@@ -120,7 +120,7 @@ export function DevelopersSection() {
               y2="50%"
               stroke="#374151"
               strokeWidth="1.5"
-              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '400ms' }}
             />
             
@@ -132,7 +132,7 @@ export function DevelopersSection() {
               y2="50%"
               stroke="#374151"
               strokeWidth="1.5"
-              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '500ms' }}
             />
             
@@ -144,7 +144,7 @@ export function DevelopersSection() {
               y2="50%"
               stroke="#374151"
               strokeWidth="1.5"
-              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '600ms' }}
             />
             
@@ -156,7 +156,7 @@ export function DevelopersSection() {
               y2="50%"
               stroke="#374151"
               strokeWidth="1.5"
-              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '700ms' }}
             />
             
@@ -168,7 +168,7 @@ export function DevelopersSection() {
               y2="50%"
               stroke="#374151"
               strokeWidth="1.5"
-              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '800ms' }}
             />
             
@@ -180,7 +180,7 @@ export function DevelopersSection() {
               y2="50%"
               stroke="#374151"
               strokeWidth="1.5"
-              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '900ms' }}
             />
           </svg>
