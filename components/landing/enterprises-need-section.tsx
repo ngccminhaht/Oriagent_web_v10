@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
+
 const hexagonItems = [
   {
     title: "Shift from Shopping Applications to Personal Assistants",
