@@ -44,9 +44,12 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <span className={`font-display tracking-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>Optimus</span>
-            <span className={`text-muted-foreground font-mono transition-all duration-500 ${isScrolled ? "text-[10px] mt-0.5" : "text-xs mt-1"}`}>TM</span>
+          <a href="#" className="flex items-center group">
+            <img 
+              src="/logo_oriagent.svg" 
+              alt="Oriagent" 
+              className={`transition-all duration-500 ${isScrolled ? "h-6" : "h-8"}`}
+            />
           </a>
 
           {/* Desktop Navigation */}

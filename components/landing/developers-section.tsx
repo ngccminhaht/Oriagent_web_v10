@@ -6,23 +6,23 @@ import { Copy, Check } from "lucide-react";
 const codeExamples = [
   {
     label: "Install",
-    code: `npm install @optimus/sdk
+    code: `npm install @oriagent/sdk
 
 # or
-yarn add @optimus/sdk
-pnpm add @optimus/sdk`,
+yarn add @oriagent/sdk
+pnpm add @oriagent/sdk`,
   },
   {
     label: "Initialize",
-    code: `import { Optimus } from '@optimus/sdk'
+    code: `import { Oriagent } from '@oriagent/sdk'
 
-const optimus = new Optimus({
-  apiKey: process.env.OPTIMUS_KEY
+const oriagent = new Oriagent({
+  apiKey: process.env.ORIAGENT_KEY
 })`,
   },
   {
     label: "Deploy",
-    code: `const app = await optimus.deploy({
+    code: `const app = await oriagent.deploy({
   name: 'my-app',
   region: 'auto',
   scaling: {
