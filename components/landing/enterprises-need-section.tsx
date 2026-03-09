@@ -43,7 +43,7 @@ const descriptions = [
     position: "right-2",
   },
   {
-    text: "Upgrade data awareness and transform how data is organized and exploited, turning data from a "static resource" into a "living source" that is continuously updated, learned from, and converted into knowledge to serve AI Agents.",
+    text: "Upgrade data awareness and transform how data is organized and exploited, turning data from a 'static resource' into a 'living source' that is continuously updated, learned from, and converted into knowledge to serve AI Agents.",
     position: "right-3",
   },
   {
