@@ -16,7 +16,7 @@ optimus.connect({
   },
   {
     number: "II",
-    title: "Build your workflow",
+    title: "Build AI Agent workflow",
     description: "Design powerful automations with our visual builder or write code directly.",
     code: `optimus.workflow('process', {
   trigger: 'event',
