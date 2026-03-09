@@ -11,8 +11,8 @@ const features = [
   },
   {
     number: "02",
-    title: "AI-Native Workflows",
-    description: "Build intelligent applications with built-in AI capabilities. From inference to training, everything scales automatically.",
+    title: "Unlimited Integration",
+    description: "Seamlessly connect any tool, AI model, CRM, or ERP. Build intelligent applications with built‑in AI that automatically scale from inference to training.",
     visual: "ai",
   },
   {
