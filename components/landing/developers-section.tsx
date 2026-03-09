@@ -73,9 +73,11 @@ export function DevelopersSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-3xl lg:text-5xl font-display tracking-tight text-foreground">
-            SOLUTION
-          </h2>
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
+            <span className="w-8 h-px bg-foreground/30" />
+            Solution
+            <span className="w-8 h-px bg-foreground/30" />
+          </span>
         </div>
 
         {/* Main Grid Layout */}
@@ -88,9 +90,9 @@ export function DevelopersSection() {
               }`}
             >
               <img
-                src="/logo_oriagent.svg"
+                src="/icon_logo.svg"
                 alt="Oriagent"
-                className="h-16 lg:h-20 w-auto"
+                className="h-12 lg:h-16 w-auto"
               />
             </div>
           </div>
