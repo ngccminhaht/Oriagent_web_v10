@@ -69,11 +69,11 @@ export function InfrastructureSection() {
         {/* 6 Boxes Grid - 3 left, 3 right */}
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Left Column */}
-          <div className="grid grid-rows-3 gap-6">
+          <div className="flex flex-col gap-6">
             {leftItems.map((item, index) => (
               <div
                 key={item.title}
-                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 flex flex-col justify-center aspect-[3/2] lg:aspect-[2/1] ${
+                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
@@ -91,11 +91,11 @@ export function InfrastructureSection() {
           </div>
 
           {/* Right Column */}
-          <div className="grid grid-rows-3 gap-6">
+          <div className="flex flex-col gap-6">
             {rightItems.map((item, index) => (
               <div
                 key={item.title}
-                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 flex flex-col justify-center aspect-[3/2] lg:aspect-[2/1] ${
+                className={`p-6 lg:p-8 border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-500 ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
