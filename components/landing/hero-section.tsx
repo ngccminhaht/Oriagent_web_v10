@@ -133,7 +133,7 @@ export function HeroSection() {
               variant="outline" 
               className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
             >
-              Watch demo
+              Talk to an AI Architect
             </Button>
           </div>
         </div>

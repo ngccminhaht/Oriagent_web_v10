@@ -46,28 +46,28 @@ function AnimatedCounter({ end, suffix = "", prefix = "" }: { end: number; suffi
 
 const metrics = [
   { 
-    value: 2847392, 
-    suffix: "", 
+    value: 500, 
+    suffix: "+", 
     prefix: "",
-    label: "API requests today",
+    label: "Active Clients",
   },
   { 
-    value: 99, 
-    suffix: ".99%", 
+    value: 5000, 
+    suffix: "+", 
     prefix: "",
-    label: "Uptime this quarter",
+    label: "AI Agents Created & Deployed",
   },
   { 
-    value: 23, 
-    suffix: "ms", 
+    value: 100, 
+    suffix: "B+", 
     prefix: "",
-    label: "Average response time",
+    label: "Tokens Processed in Production",
   },
   { 
-    value: 184, 
-    suffix: "", 
+    value: 250, 
+    suffix: "+", 
     prefix: "",
-    label: "Countries served",
+    label: "AI & Technology Specialists",
   },
 ];
 
@@ -108,9 +108,9 @@ export function MetricsSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Performance you
+              Enterprise AI Platform to
               <br />
-              can measure.
+              Connect All Your Business Data
             </h2>
           </div>
           <div className="flex items-center gap-4 font-mono text-sm text-muted-foreground">
