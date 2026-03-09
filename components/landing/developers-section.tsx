@@ -4,37 +4,31 @@ import { useEffect, useRef, useState } from "react";
 
 const solutionItems = [
   {
-    number: 1,
     title: "Data Connectors",
     description: "SharePoint, OneDrive\nGoogle Drive\nAmazon S3\nSnowflake and other data warehouses",
     side: "left",
   },
   {
-    number: 2,
     title: "AI Models",
     description: "OpenAI, Anthropic, Meta, Mistral\nGroq, Gemini, Local MML, Deepseek, Kimi\nDeepgram, ElevenLabs",
     side: "left",
   },
   {
-    number: 3,
     title: "Pre-built Interfaces",
     description: "Chat interface\nBatch processing\nSmart forms\nVoice assistants\nWebsite chatbots",
     side: "left",
   },
   {
-    number: 4,
     title: "Governance",
     description: "AI guardrails, PII masking\nRole-Based Access Control (RBAC)\nGroup management\nSingle Sign-On (SSO)",
     side: "right",
   },
   {
-    number: 5,
     title: "Analytics",
     description: "Performance analytics\nConversation tracking\nAutomated report generation",
     side: "right",
   },
   {
-    number: 6,
     title: "Skills & Integrations",
     description: "Native CRM/ERP integrations, enterprise\ntool support, API-first architecture, and AI\nAgents that execute real actions across\nbusiness systems.",
     side: "right",
@@ -130,8 +124,8 @@ export function DevelopersSection() {
             <div className="flex flex-col gap-12 lg:gap-16">
               {leftItems.map((item, index) => (
                 <div
-                  key={item.number}
-                  className={`flex items-start gap-4 transition-all duration-500 ${
+                  key={item.title}
+                  className={`flex items-start transition-all duration-500 ${
                     isVisible
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 -translate-x-8"
@@ -146,15 +140,6 @@ export function DevelopersSection() {
                       {item.description}
                     </p>
                   </div>
-                  <div className="flex-shrink-0">
-                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-foreground text-background flex items-center justify-center font-bold text-sm lg:text-base"
-                      style={{
-                        clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-                      }}
-                    >
-                      {item.number}
-                    </div>
-                  </div>
                 </div>
               ))}
             </div>
@@ -166,23 +151,14 @@ export function DevelopersSection() {
             <div className="flex flex-col gap-12 lg:gap-16">
               {rightItems.map((item, index) => (
                 <div
-                  key={item.number}
-                  className={`flex items-start gap-4 transition-all duration-500 ${
+                  key={item.title}
+                  className={`flex items-start transition-all duration-500 ${
                     isVisible
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 translate-x-8"
                   }`}
                   style={{ transitionDelay: `${index * 100 + 200}ms` }}
                 >
-                  <div className="flex-shrink-0">
-                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-foreground text-background flex items-center justify-center font-bold text-sm lg:text-base"
-                      style={{
-                        clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-                      }}
-                    >
-                      {item.number}
-                    </div>
-                  </div>
                   <div className="flex-1 text-left">
                     <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-2">
                       {item.title}
