@@ -5,18 +5,18 @@ import { useEffect, useRef, useState } from "react";
 const steps = [
   {
     number: "I",
-    title: "Connect your tools",
-    description: "Integrate with your existing stack in minutes. We support 200+ data sources out of the box.",
+    title: "Fragmented AI Ecosystem",
+    description: "AI tools operate separately without proper integration.",
   },
   {
     number: "II",
-    title: "Build AI Agent workflow",
-    description: "Design powerful automations with our visual builder or write code directly.",
+    title: "Lack of AI Governance",
+    description: "AI agents run without clear control, monitoring, or management.",
   },
   {
     number: "III",
-    title: "Ship to production",
-    description: "Deploy globally with zero configuration. Your app goes live in under 30 seconds.",
+    title: "Production Deployment Barriers",
+    description: "Security, compliance, and scaling issues slow real-world deployment.",
   },
 ];
 
