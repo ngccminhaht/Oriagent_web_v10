@@ -57,11 +57,16 @@ export function HowItWorksSection() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="mb-16 lg:mb-24">
+        <div className="mb-12">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-background/50 mb-6">
             <span className="w-8 h-px bg-background/30" />
             Solution
           </span>
+        </div>
+
+        {/* Main content - 2 columns */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
+          {/* Left column - AI Adoption content */}
           <div>
             <h2
               className={`text-4xl lg:text-5xl font-display tracking-tight transition-all duration-700 mb-6 ${
@@ -72,7 +77,7 @@ export function HowItWorksSection() {
               <br />
               <span className="text-background/50">Enterprise AI Success Is Not.</span>
             </h2>
-            <p className="text-background/60 text-lg leading-relaxed mb-8 max-w-2xl">
+            <p className="text-background/60 text-lg leading-relaxed mb-8">
               93% of enterprises have experimented with AI, yet fewer than 12% have managed to scale it beyond isolated proof-of-concepts. The gap between a promising pilot and real enterprise value remains stubbornly wide.
             </p>
             <img 
@@ -81,26 +86,24 @@ export function HowItWorksSection() {
               className="hidden lg:block max-w-[352px]"
             />
           </div>
-        </div>
 
-        {/* Main content - Steps */}
-        <div className="max-w-2xl">
+          {/* Right column - Steps */}
           <div className="space-y-0">
             {steps.map((step, index) => (
               <div
                 key={step.number}
-                className={`py-8 border-b border-background/10 transition-all duration-500 ${
+                className={`py-6 border-b border-background/10 transition-all duration-500 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="flex items-start gap-6">
-                  <span className="font-display text-3xl text-background/30">{step.number}</span>
+                  <span className="font-display text-2xl text-background/30">{step.number}</span>
                   <div className="flex-1">
-                    <h3 className="text-2xl lg:text-3xl font-display mb-3">
+                    <h3 className="text-xl lg:text-2xl font-display mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-background/60 leading-relaxed">
+                    <p className="text-background/60 leading-relaxed text-sm lg:text-base">
                       {step.description}
                     </p>
                   </div>
