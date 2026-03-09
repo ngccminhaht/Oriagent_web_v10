@@ -35,6 +35,46 @@ const enterpriseNeeds = [
   },
 ];
 
+// Typewriter component for AI-like text generation effect
+function TypewriterText({ text, delay = 0, isVisible }: { text: string; delay?: number; isVisible: boolean }) {
+  const [displayedText, setDisplayedText] = useState("");
+  const [startTyping, setStartTyping] = useState(false);
+
+  useEffect(() => {
+    if (isVisible) {
+      const timer = setTimeout(() => {
+        setStartTyping(true);
+      }, delay);
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible, delay]);
+
+  useEffect(() => {
+    if (!startTyping) return;
+    
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex <= text.length) {
+        setDisplayedText(text.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 20); // Speed of typing effect
+
+    return () => clearInterval(interval);
+  }, [startTyping, text]);
+
+  return (
+    <span className="text-sm lg:text-base text-muted-foreground leading-relaxed">
+      {displayedText}
+      {startTyping && displayedText.length < text.length && (
+        <span className="inline-block w-0.5 h-4 bg-muted-foreground/50 ml-0.5 animate-pulse" />
+      )}
+    </span>
+  );
+}
+
 export function InfrastructureSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -83,9 +123,11 @@ export function InfrastructureSection() {
                 <h3 className="text-lg lg:text-xl font-display mb-3 text-foreground">
                   {item.title}
                 </h3>
-                <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
+                <TypewriterText 
+                  text={item.description} 
+                  delay={index * 300 + 500} 
+                  isVisible={isVisible} 
+                />
               </div>
             ))}
           </div>
@@ -105,9 +147,11 @@ export function InfrastructureSection() {
                 <h3 className="text-lg lg:text-xl font-display mb-3 text-foreground">
                   {item.title}
                 </h3>
-                <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
+                <TypewriterText 
+                  text={item.description} 
+                  delay={(index + 3) * 300 + 500} 
+                  isVisible={isVisible} 
+                />
               </div>
             ))}
           </div>
