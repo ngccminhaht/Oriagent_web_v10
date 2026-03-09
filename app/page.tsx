@@ -7,6 +7,7 @@ import { MetricsSection } from "@/components/landing/metrics-section";
 import { IntegrationsSection } from "@/components/landing/integrations-section";
 
 import { DevelopersSection } from "@/components/landing/developers-section";
+import { EnterprisesNeedSection } from "@/components/landing/enterprises-need-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { CtaSection } from "@/components/landing/cta-section";
@@ -24,6 +25,7 @@ export default function Home() {
       <IntegrationsSection />
       
       <DevelopersSection />
+      <EnterprisesNeedSection />
       <TestimonialsSection />
       <PricingSection />
       <CtaSection />
