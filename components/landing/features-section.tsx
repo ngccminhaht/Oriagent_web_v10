@@ -80,16 +80,6 @@ function DeployVisual() {
   );
 }
 
-// Pre-calculated positions for 6 nodes at 60 degree intervals, radius 50
-const aiNodePositions = [
-  { x: 150, y: 80 },   // 0°
-  { x: 125, y: 123 },  // 60°
-  { x: 75, y: 123 },   // 120°
-  { x: 50, y: 80 },    // 180°
-  { x: 75, y: 37 },    // 240°
-  { x: 125, y: 37 },   // 300°
-];
-
 function AIVisual() {
   return (
     <svg viewBox="0 0 200 160" className="w-full h-full">
@@ -98,47 +88,65 @@ function AIVisual() {
         <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite" />
       </circle>
       
-      {/* Orbiting nodes */}
-      {aiNodePositions.map((pos, i) => (
-        <g key={i}>
-          {/* Connection line */}
-          <line
-            x1="100"
-            y1="80"
-            x2={pos.x}
-            y2={pos.y}
-            stroke="currentColor"
-            strokeWidth="1"
-            opacity="0.3"
-          >
-            <animate
-              attributeName="opacity"
-              values="0.3;0.8;0.3"
-              dur="2s"
-              begin={`${i * 0.3}s`}
-              repeatCount="indefinite"
-            />
-          </line>
-          
-          {/* Outer node */}
-          <circle
-            cx={pos.x}
-            cy={pos.y}
-            r="6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <animate
-              attributeName="r"
-              values="6;8;6"
-              dur="2s"
-              begin={`${i * 0.3}s`}
-              repeatCount="indefinite"
-            />
-          </circle>
-        </g>
-      ))}
+      {/* Node 1 - 0° */}
+      <g>
+        <line x1="100" y1="80" x2="150" y2="80" stroke="currentColor" strokeWidth="1" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="0s" repeatCount="indefinite" />
+        </line>
+        <circle cx="150" cy="80" r="6" fill="none" stroke="currentColor" strokeWidth="2">
+          <animate attributeName="r" values="6;8;6" dur="2s" begin="0s" repeatCount="indefinite" />
+        </circle>
+      </g>
+      
+      {/* Node 2 - 60° */}
+      <g>
+        <line x1="100" y1="80" x2="125" y2="123" stroke="currentColor" strokeWidth="1" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="0.3s" repeatCount="indefinite" />
+        </line>
+        <circle cx="125" cy="123" r="6" fill="none" stroke="currentColor" strokeWidth="2">
+          <animate attributeName="r" values="6;8;6" dur="2s" begin="0.3s" repeatCount="indefinite" />
+        </circle>
+      </g>
+      
+      {/* Node 3 - 120° */}
+      <g>
+        <line x1="100" y1="80" x2="75" y2="123" stroke="currentColor" strokeWidth="1" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="0.6s" repeatCount="indefinite" />
+        </line>
+        <circle cx="75" cy="123" r="6" fill="none" stroke="currentColor" strokeWidth="2">
+          <animate attributeName="r" values="6;8;6" dur="2s" begin="0.6s" repeatCount="indefinite" />
+        </circle>
+      </g>
+      
+      {/* Node 4 - 180° */}
+      <g>
+        <line x1="100" y1="80" x2="50" y2="80" stroke="currentColor" strokeWidth="1" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="0.9s" repeatCount="indefinite" />
+        </line>
+        <circle cx="50" cy="80" r="6" fill="none" stroke="currentColor" strokeWidth="2">
+          <animate attributeName="r" values="6;8;6" dur="2s" begin="0.9s" repeatCount="indefinite" />
+        </circle>
+      </g>
+      
+      {/* Node 5 - 240° */}
+      <g>
+        <line x1="100" y1="80" x2="75" y2="37" stroke="currentColor" strokeWidth="1" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="1.2s" repeatCount="indefinite" />
+        </line>
+        <circle cx="75" cy="37" r="6" fill="none" stroke="currentColor" strokeWidth="2">
+          <animate attributeName="r" values="6;8;6" dur="2s" begin="1.2s" repeatCount="indefinite" />
+        </circle>
+      </g>
+      
+      {/* Node 6 - 300° */}
+      <g>
+        <line x1="100" y1="80" x2="125" y2="37" stroke="currentColor" strokeWidth="1" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="1.5s" repeatCount="indefinite" />
+        </line>
+        <circle cx="125" cy="37" r="6" fill="none" stroke="currentColor" strokeWidth="2">
+          <animate attributeName="r" values="6;8;6" dur="2s" begin="1.5s" repeatCount="indefinite" />
+        </circle>
+      </g>
       
       {/* Pulse rings */}
       <circle cx="100" cy="80" r="30" fill="none" stroke="currentColor" strokeWidth="1" opacity="0">
