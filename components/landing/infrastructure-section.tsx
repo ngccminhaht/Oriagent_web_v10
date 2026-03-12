@@ -2,38 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 
-const enterpriseNeeds = [
-  {
-    title: "Personal AI Assistants",
-    description: "Transform customer interactions with AI that understands context and individual needs.",
-    side: "left",
-  },
-  {
-    title: "Learning & Understanding",
-    description: "AI that continuously learns from interactions to understand user behavior and goals.",
-    side: "left",
-  },
-  {
-    title: "AI Control & Governance",
-    description: "Robust framework to control AI behavior, manage permissions, and ensure compliance.",
-    side: "left",
-  },
-  {
-    title: "Adaptive Network Architecture",
-    description: "Connected network between Users, Products, and AI Agents for maximum efficiency.",
-    side: "right",
-  },
-  {
-    title: "Operational Organization",
-    description: "Human-in-the-loop collaboration between humans and machines for safety and accuracy.",
-    side: "right",
-  },
-  {
-    title: "Data to Knowledge",
-    description: "Transform static data into living knowledge that continuously serves AI Agents.",
-    side: "right",
-  },
-];
+import { useTranslations } from "next-intl";
 
 // Typewriter component for AI-like text generation effect
 function TypewriterText({ text, delay = 0, isVisible }: { text: string; delay?: number; isVisible: boolean }) {
@@ -76,6 +45,41 @@ function TypewriterText({ text, delay = 0, isVisible }: { text: string; delay?: 
 }
 
 export function InfrastructureSection() {
+  const t = useTranslations("InfrastructureSection");
+
+  const enterpriseNeeds = [
+    {
+      title: t("items.personalAIAssistants.title"),
+      description: t("items.personalAIAssistants.description"),
+      side: "left",
+    },
+    {
+      title: t("items.learningUnderstanding.title"),
+      description: t("items.learningUnderstanding.description"),
+      side: "left",
+    },
+    {
+      title: t("items.controlGovernance.title"),
+      description: t("items.controlGovernance.description"),
+      side: "left",
+    },
+    {
+      title: t("items.adaptiveArchitecture.title"),
+      description: t("items.adaptiveArchitecture.description"),
+      side: "right",
+    },
+    {
+      title: t("items.operationalOrg.title"),
+      description: t("items.operationalOrg.description"),
+      side: "right",
+    },
+    {
+      title: t("items.dataToKnowledge.title"),
+      description: t("items.dataToKnowledge.description"),
+      side: "right",
+    },
+  ];
+
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -101,7 +105,7 @@ export function InfrastructureSection() {
         <div className="text-center mb-16 lg:mb-24">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
             <span className="w-8 h-px bg-foreground/30" />
-            Enterprises Need
+            {t("eyebrow")}
             <span className="w-8 h-px bg-foreground/30" />
           </span>
         </div>

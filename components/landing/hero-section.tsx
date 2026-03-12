@@ -4,10 +4,19 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
-
-const words = ["create", "build", "scale", "ship"];
+import { useTranslations } from "next-intl";
 
 export function HeroSection() {
+  const t = useTranslations("HeroSection");
+  const tStats = useTranslations("Stats");
+
+  const words = [
+    t("words.create"),
+    t("words.build"),
+    t("words.scale"),
+    t("words.ship"),
+  ];
+
   const [isVisible, setIsVisible] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
 
@@ -64,7 +73,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
             <span className="w-8 h-px bg-foreground/30" />
-            The AI platform for modern teams
+            {t("eyebrow")}
           </span>
         </div>
         
@@ -75,9 +84,9 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block">The AI platform</span>
+            <span className="block">{t("headlinePrefix")}</span>
             <span className="block">
-              to{" "}
+              {t("headlineTo")}{" "}
               <span className="relative inline-block">
                 <span 
                   key={wordIndex}
@@ -108,8 +117,7 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            AI Factory Platform – Stop configuring, start innovating. 
-            Securely build, deploy & scale the best experiences.
+            {t("description")}
           </p>
           
           {/* CTAs */}
@@ -124,7 +132,7 @@ export function HeroSection() {
               asChild
             >
               <a href="https://app.oriagent.com/apps" target="_blank" rel="noopener noreferrer">
-                Start free trial
+                {t("startFreeTrial")}
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
@@ -133,7 +141,7 @@ export function HeroSection() {
               variant="outline" 
               className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
             >
-              Talk to an AI Architect
+              {t("talkToArchitect")}
             </Button>
           </div>
         </div>
@@ -150,10 +158,10 @@ export function HeroSection() {
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-16">
               {[
-                { value: "20 days", label: "saved on builds", company: "NETFLIX" },
-                { value: "98%", label: "faster deployment", company: "STRIPE" },
-                { value: "300%", label: "throughput increase", company: "LINEAR" },
-                { value: "6x", label: "faster to ship", company: "NOTION" },
+                { value: "20 days", label: tStats("savedOnBuilds"), company: "NETFLIX" },
+                { value: "98%", label: tStats("fasterDeployment"), company: "STRIPE" },
+                { value: "300%", label: tStats("throughputIncrease"), company: "LINEAR" },
+                { value: "6x", label: tStats("fasterToShip"), company: "NOTION" },
               ].map((stat) => (
                 <div key={`${stat.company}-${i}`} className="flex items-baseline gap-4">
                   <span className="text-4xl lg:text-5xl font-display">{stat.value}</span>

@@ -34,7 +34,10 @@ const integrationsRow2 = [
   { name: "Zoho", icon: "https://aihive.global/wp-content/uploads/2026/02/google-cloud-1.png" },
 ];
 
+import { useTranslations } from "next-intl";
+
 export function IntegrationsSection() {
+  const t = useTranslations("IntegrationsSection");
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -61,16 +64,16 @@ export function IntegrationsSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
             <span className="w-8 h-px bg-foreground/30" />
-            Integrations
+            {t("eyebrow")}
             <span className="w-8 h-px bg-foreground/30" />
           </span>
           <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-6">
-            Built for Enterprises That
+            {t("titleLine1")}
             <br />
-            Take AI Seriously
+            {t("titleLine2")}
           </h2>
           <p className="text-xl text-muted-foreground">
-            Oriagent integrates securely with enterprise data sources to power scalable, production-ready AI agents.
+            {t("description")}
           </p>
         </div>
 

@@ -3,17 +3,22 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { name: "Features", href: "#features" },
-  { name: "Problem", href: "#how-it-works" },
-  { name: "Solution", href: "#developers" },
-  { name: "Pricing", href: "#pricing" },
-];
+import { useTranslations, useLocale } from "next-intl";
+import { LanguageSwitcher } from "./language-switcher";
 
 export function Navigation() {
+  const t = useTranslations("Navigation");
+  const locale = useLocale();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: t("features"), href: `/${locale}#features` },
+    { name: t("problem"), href: `/${locale}#how-it-works` },
+    { name: t("solution"), href: `/${locale}#developers` },
+    { name: t("blog"), href: `/${locale}/blog` },
+    { name: t("pricing"), href: `/${locale}/pricing` },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +49,7 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center group">
+          <a href={`/${locale}`} className="flex items-center group">
             <img 
               src="/logo_oriagent.svg" 
               alt="Oriagent" 
@@ -68,8 +73,9 @@ export function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
+            <LanguageSwitcher />
             <a href="https://app.oriagent.com/apps" target="_blank" rel="noopener noreferrer" className={`text-foreground/70 hover:text-foreground transition-all duration-500 ${isScrolled ? "text-xs" : "text-sm"}`}>
-              Sign in
+              {t("signIn")}
             </a>
             <Button
               size="sm"
@@ -77,7 +83,7 @@ export function Navigation() {
               asChild
             >
               <a href="https://app.oriagent.com/apps" target="_blank" rel="noopener noreferrer">
-                Start creating
+                {t("startCreating")}
               </a>
             </Button>
           </div>
@@ -110,6 +116,14 @@ export function Navigation() {
         <div className="flex flex-col h-full px-8 pt-28 pb-8">
           {/* Navigation Links */}
           <div className="flex-1 flex flex-col justify-center gap-8">
+            <div className={`transition-all duration-500 ${
+                  isMobileMenuOpen 
+                    ? "opacity-100 translate-y-0" 
+                    : "opacity-0 translate-y-4"
+                }`}
+            >
+               <LanguageSwitcher />
+            </div>
             {navLinks.map((link, i) => (
               <a
                 key={link.name}
@@ -142,7 +156,7 @@ export function Navigation() {
               asChild
             >
               <a href="https://app.oriagent.com/apps" target="_blank" rel="noopener noreferrer">
-                Sign in
+                {t("signIn")}
               </a>
             </Button>
             <Button 
@@ -151,7 +165,7 @@ export function Navigation() {
               asChild
             >
               <a href="https://app.oriagent.com/apps" target="_blank" rel="noopener noreferrer">
-                Start creating
+                {t("startCreating")}
               </a>
             </Button>
           </div>

@@ -2,32 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { AnimatedWave } from "./animated-wave";
-
-const footerLinks = {
-  Product: [
-    { name: "Features", href: "#features" },
-    { name: "Problem", href: "#how-it-works" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Integrations", href: "#integrations" },
-  ],
-  Solution: [
-    { name: "Documentation", href: "#developers" },
-    { name: "API Reference", href: "#" },
-    { name: "SDK", href: "#developers" },
-    { name: "Status", href: "#" },
-  ],
-  Company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Careers", href: "#", badge: "Hiring" },
-    { name: "Contact", href: "#" },
-  ],
-  Legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-    { name: "Security", href: "#security" },
-  ],
-};
+import { useTranslations, useLocale } from "next-intl";
 
 const socialLinks = [
   { name: "Twitter", href: "#" },
@@ -36,6 +11,35 @@ const socialLinks = [
 ];
 
 export function FooterSection() {
+  const t = useTranslations("FooterSection");
+  const locale = useLocale();
+
+  const footerLinks = {
+    [t("columns.product")]: [
+      { name: t("links.features"), href: `/${locale}#features` },
+      { name: t("links.problem"), href: `/${locale}#how-it-works` },
+      { name: t("links.pricing"), href: `/${locale}/pricing` },
+      { name: t("links.integrations"), href: `/${locale}#integrations` },
+    ],
+    [t("columns.solution")]: [
+      { name: t("links.documentation"), href: `/${locale}#developers` },
+      { name: t("links.apiReference"), href: "#" },
+      { name: t("links.sdk"), href: `/${locale}#developers` },
+      { name: t("links.status"), href: "#" },
+    ],
+    [t("columns.company")]: [
+      { name: t("links.about"), href: "#" },
+      { name: t("links.blog"), href: `/${locale}/blog` },
+      { name: t("links.careers"), href: "#", badge: t("badges.hiring") },
+      { name: t("links.contact"), href: "#" },
+    ],
+    [t("columns.legal")]: [
+      { name: t("links.privacy"), href: "#" },
+      { name: t("links.terms"), href: "#" },
+      { name: t("links.security"), href: "#security" },
+    ],
+  };
+
   return (
     <footer className="relative border-t border-foreground/10">
       {/* Animated wave background */}
@@ -58,7 +62,7 @@ export function FooterSection() {
               </a>
 
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs">
-                The AI platform for teams who ship. Build, deploy, and scale with unprecedented velocity.
+                {t("description")}
               </p>
 
               {/* Social Links */}
@@ -105,13 +109,13 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            2025 Oriagent. All rights reserved.
+            {t("bottomBar.copyright")}
           </p>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500" />
-              All systems operational
+              {t("bottomBar.systemStatus")}
             </span>
           </div>
         </div>

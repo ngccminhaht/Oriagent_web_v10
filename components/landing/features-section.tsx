@@ -2,32 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const features = [
-  {
-    number: "01",
-    title: "Instant Training Data",
-    description: "Upload your datasets in seconds. Our edge network guarantees the data is instantly accessible for training, anywhere in the world.",
-    visual: "deploy",
-  },
-  {
-    number: "02",
-    title: "Unlimited Integration",
-    description: "Seamlessly connect any tool, AI model, CRM, or ERP. Build intelligent applications with built‑in AI that automatically scale from inference to training.",
-    visual: "ai",
-  },
-  {
-    number: "03",
-    title: "Real-time Collaboration",
-    description: "Work together seamlessly. Live preview, instant feedback, and version control that actually makes sense.",
-    visual: "collab",
-  },
-  {
-    number: "04",
-    title: "Enterprise Security",
-    description: "Bank-grade encryption, SOC 2 compliance, and granular access controls. Your data stays yours.",
-    visual: "security",
-  },
-];
+import { useTranslations } from "next-intl";
+
+interface Feature {
+  number: string;
+  title: string;
+  description: string;
+  visual: string;
+}
 
 function DeployVisual() {
   return (
@@ -257,7 +239,7 @@ function AnimatedVisual({ type }: { type: string }) {
   }
 }
 
-function FeatureCard({ feature, index }: { feature: typeof features[0]; index: number }) {
+function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -311,6 +293,35 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
 }
 
 export function FeaturesSection() {
+  const t = useTranslations("FeaturesSection");
+  
+  const features: Feature[] = [
+    {
+      number: "01",
+      title: t("items.instantTraining.title"),
+      description: t("items.instantTraining.description"),
+      visual: "deploy",
+    },
+    {
+      number: "02",
+      title: t("items.unlimitedIntegration.title"),
+      description: t("items.unlimitedIntegration.description"),
+      visual: "ai",
+    },
+    {
+      number: "03",
+      title: t("items.realTimeCollab.title"),
+      description: t("items.realTimeCollab.description"),
+      visual: "collab",
+    },
+    {
+      number: "04",
+      title: t("items.enterpriseSecurity.title"),
+      description: t("items.enterpriseSecurity.description"),
+      visual: "security",
+    },
+  ];
+
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -337,16 +348,16 @@ export function FeaturesSection() {
         <div className="mb-16 lg:mb-24">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
             <span className="w-8 h-px bg-foreground/30" />
-            Capabilities
+            {t("eyebrow")}
           </span>
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Everything you need.
+            {t("titleLine1")}
             <br />
-            <span className="text-muted-foreground">Nothing you don&apos;t.</span>
+            <span className="text-muted-foreground">{t("titleLine2")}</span>
           </h2>
         </div>
 

@@ -44,37 +44,41 @@ function AnimatedCounter({ end, suffix = "", prefix = "" }: { end: number; suffi
   );
 }
 
-const metrics = [
-  { 
-    value: 500, 
-    suffix: "+", 
-    prefix: "",
-    label: "Active Clients",
-  },
-  { 
-    value: 5000, 
-    suffix: "+", 
-    prefix: "",
-    label: "AI Agents Created & Deployed",
-  },
-  { 
-    value: 100, 
-    suffix: "B+", 
-    prefix: "",
-    label: "Tokens Processed in Production",
-  },
-  { 
-    value: 250, 
-    suffix: "+", 
-    prefix: "",
-    label: "AI & Technology Specialists",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export function MetricsSection() {
+  const t = useTranslations("MetricsSection");
+
   const [timeString, setTimeString] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const metrics = [
+    { 
+      value: 500, 
+      suffix: "+", 
+      prefix: "",
+      label: t("metrics.activeClients"),
+    },
+    { 
+      value: 5000, 
+      suffix: "+", 
+      prefix: "",
+      label: t("metrics.agentsDeployed"),
+    },
+    { 
+      value: 100, 
+      suffix: "B+", 
+      prefix: "",
+      label: t("metrics.tokensProcessed"),
+    },
+    { 
+      value: 250, 
+      suffix: "+", 
+      prefix: "",
+      label: t("metrics.techSpecialists"),
+    },
+  ];
 
   useEffect(() => {
     setTimeString(new Date().toLocaleTimeString());
@@ -102,22 +106,20 @@ export function MetricsSection() {
           <div>
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              Live metrics
+              {t("eyebrow")}
             </span>
             <h2
-              className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
+              className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 whitespace-pre-line ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Enterprise AI Platform to
-              <br />
-              Connect All Your Business Data
+              {t("title")}
             </h2>
           </div>
           <div className="flex items-center gap-4 font-mono text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Live
+              {t("live")}
             </span>
             <span className="text-foreground/30">|</span>
             <span>{timeString ?? "--:--:--"}</span>

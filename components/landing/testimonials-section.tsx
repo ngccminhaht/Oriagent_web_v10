@@ -1,39 +1,41 @@
 "use client";
-
 import { useEffect, useState } from "react";
-
-const testimonials = [
-  {
-    quote: "OriAgent turned our AI experiments into real production systems. We went from scattered tools to a unified AI infrastructure.",
-    author: "David Chen",
-    role: "CTO",
-    company: "Nexus Digital",
-    metric: "85% faster AI deployment",
-  },
-  {
-    quote: "Managing AI agents across teams used to be chaos. OriAgent gave us governance, visibility, and full control.",
-    author: "Sarah Mitchell",
-    role: "Head of AI Platform",
-    company: "CloudBridge",
-    metric: "120+ agents managed centrally",
-  },
-  {
-    quote: "Finally, a platform that lets enterprises scale AI safely. Security and compliance were built in from day one.",
-    author: "Michael Alvarez",
-    role: "VP Engineering",
-    company: "DataForge",
-    metric: "Enterprise-grade security compliance",
-  },
-  {
-    quote: "OriAgent made AI automation reliable at scale. What used to break in production now runs continuously.",
-    author: "Elena Rodriguez",
-    role: "Director of Technology",
-    company: "Beacon AI",
-    metric: "99.99% uptime",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export function TestimonialsSection() {
+  const t = useTranslations("TestimonialsSection");
+
+  const testimonials = [
+    {
+      quote: t("testimonials.nexus.quote"),
+      author: "David Chen",
+      role: t("testimonials.nexus.role"),
+      company: "Nexus Digital",
+      metric: t("testimonials.nexus.metric"),
+    },
+    {
+      quote: t("testimonials.cloudbridge.quote"),
+      author: "Sarah Mitchell",
+      role: t("testimonials.cloudbridge.role"),
+      company: "CloudBridge",
+      metric: t("testimonials.cloudbridge.metric"),
+    },
+    {
+      quote: t("testimonials.dataforge.quote"),
+      author: "Michael Alvarez",
+      role: t("testimonials.dataforge.role"),
+      company: "DataForge",
+      metric: t("testimonials.dataforge.metric"),
+    },
+    {
+      quote: t("testimonials.beacon.quote"),
+      author: "Elena Rodriguez",
+      role: t("testimonials.beacon.role"),
+      company: "Beacon AI",
+      metric: t("testimonials.beacon.metric"),
+    },
+  ];
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -56,7 +58,7 @@ export function TestimonialsSection() {
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
-            What people say
+            {t("eyebrow")}
           </span>
           <div className="flex-1 h-px bg-foreground/10" />
           <span className="font-mono text-xs text-muted-foreground">
@@ -105,7 +107,7 @@ export function TestimonialsSection() {
               }`}
             >
               <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase block mb-4">
-                Key Result
+                {t("keyResult")}
               </span>
               <p className="font-display text-3xl md:text-4xl text-foreground">
                 {activeTestimonial.metric}
@@ -138,7 +140,7 @@ export function TestimonialsSection() {
         {/* Company Logos Marquee Label */}
         <div className="mt-24 pt-12 border-t border-foreground/10">
           <p className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-8 text-center">
-            Trusted by forward-thinking teams
+            {t("trustedBy")}
           </p>
         </div>
       </div>

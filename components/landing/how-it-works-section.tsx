@@ -2,25 +2,29 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const steps = [
-  {
-    number: "I",
-    title: "Fragmented AI Ecosystem",
-    description: "AI tools operate separately without proper integration.",
-  },
-  {
-    number: "II",
-    title: "Lack of AI Governance",
-    description: "AI agents run without clear control, monitoring, or management.",
-  },
-  {
-    number: "III",
-    title: "Production Deployment Barriers",
-    description: "Security, compliance, and scaling issues slow real-world deployment.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export function HowItWorksSection() {
+  const t = useTranslations("HowItWorksSection");
+
+  const steps = [
+    {
+      number: "I",
+      title: t("steps.fragmentedEcosystem.title"),
+      description: t("steps.fragmentedEcosystem.description"),
+    },
+    {
+      number: "II",
+      title: t("steps.lackOfGovernance.title"),
+      description: t("steps.lackOfGovernance.description"),
+    },
+    {
+      number: "III",
+      title: t("steps.deploymentBarriers.title"),
+      description: t("steps.deploymentBarriers.description"),
+    },
+  ];
+
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -60,7 +64,7 @@ export function HowItWorksSection() {
         <div className="mb-12">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-background/50 mb-6">
             <span className="w-8 h-px bg-background/30" />
-            Problem
+            {t("eyebrow")}
           </span>
         </div>
 
@@ -73,16 +77,16 @@ export function HowItWorksSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              AI Adoption Is High.
+              {t("titleLine1")}
               <br />
-              <span className="text-background/50">Enterprise AI Success Is Not.</span>
+              <span className="text-background/50">{t("titleLine2")}</span>
             </h2>
             <p className="text-background/60 text-lg leading-relaxed mb-8">
-              93% of enterprises have experimented with AI, yet fewer than 12% have managed to scale it beyond isolated proof-of-concepts. The gap between a promising pilot and real enterprise value remains stubbornly wide.
+              {t("description")}
             </p>
             <img 
               src="https://aihive.global/wp-content/uploads/2026/02/Group-1784.png" 
-              alt="Enterprise AI statistics" 
+              alt={t("imageAlt")} 
               className="hidden lg:block max-w-[352px]"
             />
           </div>

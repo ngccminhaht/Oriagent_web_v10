@@ -1,0 +1,281 @@
+{
+    "Navigation": {
+        "features": "Features",
+        "problem": "Problem",
+        "solution": "Solution",
+        "pricing": "Pricing",
+        "blog": "Blog",
+        "signIn": "Sign in",
+        "startCreating": "Start creating"
+    },
+    "DevelopersSection": {
+        "solutionTab": "Solution",
+        "dataConnectors": {
+            "title": "Data Connectors",
+            "description": "SharePoint, OneDrive\nGoogle Drive\nAmazon S3\nSnowflake and other data warehouses"
+        },
+        "aiModels": {
+            "title": "AI Models",
+            "description": "OpenAI, Anthropic, Meta, Mistral\nGroq, Gemini, Local MML, Deepseek, Kimi\nDeepgram, ElevenLabs"
+        },
+        "preBuiltInterfaces": {
+            "title": "Pre-built Interfaces",
+            "description": "Chat interface\nBatch processing\nSmart forms\nVoice assistants\nWebsite chatbots"
+        },
+        "governance": {
+            "title": "Governance",
+            "description": "AI guardrails, PII masking\nRole-Based Access Control (RBAC)\nGroup management\nSingle Sign-On (SSO)"
+        },
+        "analytics": {
+            "title": "Analytics",
+            "description": "Performance analytics\nConversation tracking\nAutomated report generation"
+        },
+        "skillsAndIntegrations": {
+            "title": "Skills & Integrations",
+            "description": "Native CRM/ERP integrations, enterprise\ntool support, API-first architecture, and AI\nAgents that execute real actions across\nbusiness systems."
+        }
+    },
+    "HeroSection": {
+        "eyebrow": "The AI platform for modern teams",
+        "headlinePrefix": "The AI platform",
+        "headlineTo": "to",
+        "words": {
+            "create": "create",
+            "build": "build",
+            "scale": "scale",
+            "ship": "ship"
+        },
+        "description": "AI Factory Platform – Stop configuring, start innovating. Securely build, deploy & scale the best experiences.",
+        "startFreeTrial": "Start free trial",
+        "talkToArchitect": "Talk to an AI Architect"
+    },
+    "Stats": {
+        "savedOnBuilds": "saved on builds",
+        "fasterDeployment": "faster deployment",
+        "throughputIncrease": "throughput increase",
+        "fasterToShip": "faster to ship"
+    },
+    "MetricsSection": {
+        "eyebrow": "Live metrics",
+        "title": "Enterprise AI Platform to\nConnect All Your Business Data",
+        "live": "Live",
+        "metrics": {
+            "activeClients": "Active Clients",
+            "agentsDeployed": "AI Agents Created & Deployed",
+            "tokensProcessed": "Tokens Processed in Production",
+            "techSpecialists": "AI & Technology Specialists"
+        }
+    },
+    "InfrastructureSection": {
+        "eyebrow": "Enterprises Need",
+        "items": {
+            "personalAIAssistants": {
+                "title": "Personal AI Assistants",
+                "description": "Transform customer interactions with AI that understands context and individual needs."
+            },
+            "learningUnderstanding": {
+                "title": "Learning & Understanding",
+                "description": "AI that continuously learns from interactions to understand user behavior and goals."
+            },
+            "controlGovernance": {
+                "title": "AI Control & Governance",
+                "description": "Robust framework to control AI behavior, manage permissions, and ensure compliance."
+            },
+            "adaptiveArchitecture": {
+                "title": "Adaptive Network Architecture",
+                "description": "Connected network between Users, Products, and AI Agents for maximum efficiency."
+            },
+            "operationalOrg": {
+                "title": "Operational Organization",
+                "description": "Human-in-the-loop collaboration between humans and machines for safety and accuracy."
+            },
+            "dataToKnowledge": {
+                "title": "Data to Knowledge",
+                "description": "Transform static data into living knowledge that continuously serves AI Agents."
+            }
+        }
+    },
+    "HowItWorksSection": {
+        "eyebrow": "Problem",
+        "titleLine1": "AI Adoption Is High.",
+        "titleLine2": "Enterprise AI Success Is Not.",
+        "description": "93% of enterprises have experimented with AI, yet fewer than 12% have managed to scale it beyond isolated proof-of-concepts. The gap between a promising pilot and real enterprise value remains stubbornly wide.",
+        "imageAlt": "Enterprise AI statistics",
+        "steps": {
+            "fragmentedEcosystem": {
+                "title": "Fragmented AI Ecosystem",
+                "description": "AI tools operate separately without proper integration."
+            },
+            "lackOfGovernance": {
+                "title": "Lack of AI Governance",
+                "description": "AI agents run without clear control, monitoring, or management."
+            },
+            "deploymentBarriers": {
+                "title": "Production Deployment Barriers",
+                "description": "Security, compliance, and scaling issues slow real-world deployment."
+            }
+        }
+    },
+    "FeaturesSection": {
+        "eyebrow": "Capabilities",
+        "titleLine1": "Everything you need.",
+        "titleLine2": "Nothing you don't.",
+        "items": {
+            "instantTraining": {
+                "title": "Instant Training Data",
+                "description": "Upload your datasets in seconds. Our edge network guarantees the data is instantly accessible for training, anywhere in the world."
+            },
+            "unlimitedIntegration": {
+                "title": "Unlimited Integration",
+                "description": "Seamlessly connect any tool, AI model, CRM, or ERP. Build intelligent applications with built‑in AI that automatically scale from inference to training."
+            },
+            "realTimeCollab": {
+                "title": "Real-time Collaboration",
+                "description": "Work together seamlessly. Live preview, instant feedback, and version control that actually makes sense."
+            },
+            "enterpriseSecurity": {
+                "title": "Enterprise Security",
+                "description": "Bank-grade encryption, SOC 2 compliance, and granular access controls. Your data stays yours."
+            }
+        }
+    },
+    "CtaSection": {
+        "titleLine1": "Ready to build",
+        "titleLine2": "something great?",
+        "description": "Join thousands of teams shipping faster with Oriagent. Start free, scale infinitely.",
+        "startFree": "Start building free",
+        "talkToSales": "Talk to sales",
+        "noCreditCard": "No credit card required"
+    },
+    "PricingSection": {
+        "eyebrow": "Pricing",
+        "titleLine1": "Simple, transparent",
+        "titleLine2": "pricing",
+        "description": "Start free and scale as you grow. No hidden fees, no surprises.",
+        "monthly": "Monthly",
+        "annual": "Annual",
+        "saveLabel": "Save 17%",
+        "mostPopular": "Most Popular",
+        "custom": "Custom",
+        "perMonth": "/month",
+        "compareFeatures": "Compare all features",
+        "bottomNotePrefix": "All plans include automatic updates, HTTPS, and DDoS protection.",
+        "plans": {
+            "starter": {
+                "name": "Starter",
+                "description": "For individuals and small projects",
+                "features": [
+                    "Up to 3 projects",
+                    "1GB storage",
+                    "Community support",
+                    "Basic analytics",
+                    "SSL certificates"
+                ],
+                "cta": "Start free"
+            },
+            "pro": {
+                "name": "Pro",
+                "description": "For growing teams and businesses",
+                "features": [
+                    "Unlimited projects",
+                    "100GB storage",
+                    "Priority support",
+                    "Advanced analytics",
+                    "Custom domains",
+                    "Team collaboration",
+                    "API access"
+                ],
+                "cta": "Start trial"
+            },
+            "enterprise": {
+                "name": "Enterprise",
+                "description": "For large-scale operations",
+                "features": [
+                    "Everything in Pro",
+                    "Unlimited storage",
+                    "24/7 dedicated support",
+                    "Custom integrations",
+                    "SLA guarantee",
+                    "On-premise option",
+                    "Security audit",
+                    "Custom contracts"
+                ],
+                "cta": "Contact sales"
+            }
+        }
+    },
+    "TestimonialsSection": {
+        "eyebrow": "What people say",
+        "keyResult": "Key Result",
+        "trustedBy": "Trusted by forward-thinking teams",
+        "testimonials": {
+            "nexus": {
+                "quote": "OriAgent turned our AI experiments into real production systems. We went from scattered tools to a unified AI infrastructure.",
+                "role": "CTO",
+                "metric": "85% faster AI deployment"
+            },
+            "cloudbridge": {
+                "quote": "Managing AI agents across teams used to be chaos. OriAgent gave us governance, visibility, and full control.",
+                "role": "Head of AI Platform",
+                "metric": "120+ agents managed centrally"
+            },
+            "dataforge": {
+                "quote": "Finally, a platform that lets enterprises scale AI safely. Security and compliance were built in from day one.",
+                "role": "VP Engineering",
+                "metric": "Enterprise-grade security compliance"
+            },
+            "beacon": {
+                "quote": "OriAgent made AI automation reliable at scale. What used to break in production now runs continuously.",
+                "role": "Director of Technology",
+                "metric": "99.99% uptime"
+            }
+        }
+    },
+    "IntegrationsSection": {
+        "eyebrow": "Integrations",
+        "titleLine1": "Built for Enterprises That",
+        "titleLine2": "Take AI Seriously",
+        "description": "Oriagent integrates securely with enterprise data sources to power scalable, production-ready AI agents."
+    },
+    "FooterSection": {
+        "description": "The AI platform for teams who ship. Build, deploy, and scale with unprecedented velocity.",
+        "columns": {
+            "product": "Product",
+            "solution": "Solution",
+            "company": "Company",
+            "legal": "Legal"
+        },
+        "links": {
+            "features": "Features",
+            "problem": "Problem",
+            "pricing": "Pricing",
+            "integrations": "Integrations",
+            "documentation": "Documentation",
+            "apiReference": "API Reference",
+            "sdk": "SDK",
+            "status": "Status",
+            "about": "About",
+            "blog": "Blog",
+            "careers": "Careers",
+            "contact": "Contact",
+            "privacy": "Privacy",
+            "terms": "Terms",
+            "security": "Security"
+        },
+        "badges": {
+            "hiring": "Hiring"
+        },
+        "bottomBar": {
+            "copyright": "2025 Oriagent. All rights reserved.",
+            "systemStatus": "All systems operational"
+        }
+    },
+    "BlogPage": {
+        "eyebrow": "News & Updates",
+        "title": "Oriagent Blog",
+        "description": "Discover the latest trends in AI, platform updates, and insights on building powerful AI agents.",
+        "emptyTitle": "No posts found",
+        "emptyDescription": "Check back later for new content.",
+        "backToBlog": "Back to Blog"
+    }
+}

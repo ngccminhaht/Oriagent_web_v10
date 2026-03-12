@@ -1,41 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-const solutionItems = [
-  {
-    title: "Data Connectors",
-    description: "SharePoint, OneDrive\nGoogle Drive\nAmazon S3\nSnowflake and other data warehouses",
-    side: "left",
-  },
-  {
-    title: "AI Models",
-    description: "OpenAI, Anthropic, Meta, Mistral\nGroq, Gemini, Local MML, Deepseek, Kimi\nDeepgram, ElevenLabs",
-    side: "left",
-  },
-  {
-    title: "Pre-built Interfaces",
-    description: "Chat interface\nBatch processing\nSmart forms\nVoice assistants\nWebsite chatbots",
-    side: "left",
-  },
-  {
-    title: "Governance",
-    description: "AI guardrails, PII masking\nRole-Based Access Control (RBAC)\nGroup management\nSingle Sign-On (SSO)",
-    side: "right",
-  },
-  {
-    title: "Analytics",
-    description: "Performance analytics\nConversation tracking\nAutomated report generation",
-    side: "right",
-  },
-  {
-    title: "Skills & Integrations",
-    description: "Native CRM/ERP integrations, enterprise\ntool support, API-first architecture, and AI\nAgents that execute real actions across\nbusiness systems.",
-    side: "right",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export function DevelopersSection() {
+  const t = useTranslations("DevelopersSection");
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -50,6 +19,39 @@ export function DevelopersSection() {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
+  const solutionItems = [
+    {
+      title: t("dataConnectors.title"),
+      description: t("dataConnectors.description"),
+      side: "left",
+    },
+    {
+      title: t("aiModels.title"),
+      description: t("aiModels.description"),
+      side: "left",
+    },
+    {
+      title: t("preBuiltInterfaces.title"),
+      description: t("preBuiltInterfaces.description"),
+      side: "left",
+    },
+    {
+      title: t("governance.title"),
+      description: t("governance.description"),
+      side: "right",
+    },
+    {
+      title: t("analytics.title"),
+      description: t("analytics.description"),
+      side: "right",
+    },
+    {
+      title: t("skillsAndIntegrations.title"),
+      description: t("skillsAndIntegrations.description"),
+      side: "right",
+    },
+  ];
 
   const leftItems = solutionItems.filter((item) => item.side === "left");
   const rightItems = solutionItems.filter((item) => item.side === "right");
@@ -79,13 +81,12 @@ export function DevelopersSection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
             <span className="w-8 h-px bg-foreground/30" />
-            Solution
+            {t("solutionTab")}
             <span className="w-8 h-px bg-foreground/30" />
           </span>
         </div>
@@ -95,9 +96,8 @@ export function DevelopersSection() {
           {/* Center Logo */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
             <div
-              className={`w-24 h-24 lg:w-32 lg:h-32 bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-700 delay-300 ${
-                isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-              }`}
+              className={`w-24 h-24 lg:w-32 lg:h-32 bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-700 delay-300 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                }`}
             >
               <img
                 src="/icon_logo.svg"
@@ -123,7 +123,7 @@ export function DevelopersSection() {
               className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '400ms' }}
             />
-            
+
             {/* Left side lines - AI Models (middle) */}
             <line
               x1="33%"
@@ -135,7 +135,7 @@ export function DevelopersSection() {
               className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '500ms' }}
             />
-            
+
             {/* Left side lines - Pre-built Interfaces (bottom) */}
             <line
               x1="33%"
@@ -147,7 +147,7 @@ export function DevelopersSection() {
               className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '600ms' }}
             />
-            
+
             {/* Right side lines - Governance (top) */}
             <line
               x1="67%"
@@ -159,7 +159,7 @@ export function DevelopersSection() {
               className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '700ms' }}
             />
-            
+
             {/* Right side lines - Analytics (middle) */}
             <line
               x1="67%"
@@ -171,7 +171,7 @@ export function DevelopersSection() {
               className={`animated-dash transition-opacity duration-700 ${isVisible ? 'opacity-30' : 'opacity-0'}`}
               style={{ transitionDelay: '800ms' }}
             />
-            
+
             {/* Right side lines - Skills & Integrations (bottom) */}
             <line
               x1="67%"
@@ -192,11 +192,10 @@ export function DevelopersSection() {
               {leftItems.map((item, index) => (
                 <div
                   key={item.title}
-                  className={`flex items-start transition-all duration-500 ${
-                    isVisible
+                  className={`flex items-start transition-all duration-500 ${isVisible
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 -translate-x-8"
-                  }`}
+                    }`}
                   style={{ transitionDelay: `${index * 100 + 200}ms` }}
                 >
                   <div className="flex-1 text-right">
@@ -219,11 +218,10 @@ export function DevelopersSection() {
               {rightItems.map((item, index) => (
                 <div
                   key={item.title}
-                  className={`flex items-start transition-all duration-500 ${
-                    isVisible
+                  className={`flex items-start transition-all duration-500 ${isVisible
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 translate-x-8"
-                  }`}
+                    }`}
                   style={{ transitionDelay: `${index * 100 + 200}ms` }}
                 >
                   <div className="flex-1 text-left">

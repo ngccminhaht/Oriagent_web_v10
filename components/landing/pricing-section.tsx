@@ -2,58 +2,61 @@
 
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
-
-const plans = [
-  {
-    name: "Starter",
-    description: "For individuals and small projects",
-    price: { monthly: 0, annual: 0 },
-    features: [
-      "Up to 3 projects",
-      "1GB storage",
-      "Community support",
-      "Basic analytics",
-      "SSL certificates",
-    ],
-    cta: "Start free",
-    popular: false,
-  },
-  {
-    name: "Pro",
-    description: "For growing teams and businesses",
-    price: { monthly: 29, annual: 24 },
-    features: [
-      "Unlimited projects",
-      "100GB storage",
-      "Priority support",
-      "Advanced analytics",
-      "Custom domains",
-      "Team collaboration",
-      "API access",
-    ],
-    cta: "Start trial",
-    popular: true,
-  },
-  {
-    name: "Enterprise",
-    description: "For large-scale operations",
-    price: { monthly: null, annual: null },
-    features: [
-      "Everything in Pro",
-      "Unlimited storage",
-      "24/7 dedicated support",
-      "Custom integrations",
-      "SLA guarantee",
-      "On-premise option",
-      "Security audit",
-      "Custom contracts",
-    ],
-    cta: "Contact sales",
-    popular: false,
-  },
-];
+import { useTranslations } from "next-intl";
 
 export function PricingSection() {
+  const t = useTranslations("PricingSection");
+  
+  const plans = [
+    {
+      name: t("plans.starter.name"),
+      description: t("plans.starter.description"),
+      price: { monthly: 0, annual: 0 },
+      features: [
+        t("plans.starter.features.0"),
+        t("plans.starter.features.1"),
+        t("plans.starter.features.2"),
+        t("plans.starter.features.3"),
+        t("plans.starter.features.4"),
+      ],
+      cta: t("plans.starter.cta"),
+      popular: false,
+    },
+    {
+      name: t("plans.pro.name"),
+      description: t("plans.pro.description"),
+      price: { monthly: 29, annual: 24 },
+      features: [
+        t("plans.pro.features.0"),
+        t("plans.pro.features.1"),
+        t("plans.pro.features.2"),
+        t("plans.pro.features.3"),
+        t("plans.pro.features.4"),
+        t("plans.pro.features.5"),
+        t("plans.pro.features.6"),
+      ],
+      cta: t("plans.pro.cta"),
+      popular: true,
+    },
+    {
+      name: t("plans.enterprise.name"),
+      description: t("plans.enterprise.description"),
+      price: { monthly: null, annual: null },
+      features: [
+        t("plans.enterprise.features.0"),
+        t("plans.enterprise.features.1"),
+        t("plans.enterprise.features.2"),
+        t("plans.enterprise.features.3"),
+        t("plans.enterprise.features.4"),
+        t("plans.enterprise.features.5"),
+        t("plans.enterprise.features.6"),
+        t("plans.enterprise.features.7"),
+      ],
+      cta: t("plans.enterprise.cta"),
+      popular: false,
+    },
+  ];
+
   const [isAnnual, setIsAnnual] = useState(true);
 
   return (
@@ -62,15 +65,15 @@ export function PricingSection() {
         {/* Header */}
         <div className="max-w-3xl mb-20">
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase block mb-6">
-            Pricing
+            {t("eyebrow")}
           </span>
           <h2 className="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight text-foreground mb-6">
-            Simple, transparent
+            {t("titleLine1")}
             <br />
-            <span className="text-stroke">pricing</span>
+            <span className="text-stroke">{t("titleLine2")}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl">
-            Start free and scale as you grow. No hidden fees, no surprises.
+            {t("description")}
           </p>
         </div>
 
@@ -81,7 +84,7 @@ export function PricingSection() {
               !isAnnual ? "text-foreground" : "text-muted-foreground"
             }`}
           >
-            Monthly
+            {t("monthly")}
           </span>
           <button
             onClick={() => setIsAnnual(!isAnnual)}
@@ -98,11 +101,11 @@ export function PricingSection() {
               isAnnual ? "text-foreground" : "text-muted-foreground"
             }`}
           >
-            Annual
+            {t("annual")}
           </span>
           {isAnnual && (
             <span className="ml-2 px-2 py-1 bg-foreground text-primary-foreground text-xs font-mono rounded-[10px]">
-              Save 17%
+              {t("saveLabel")}
             </span>
           )}
         </div>
@@ -118,7 +121,7 @@ export function PricingSection() {
             >
               {plan.popular && (
                 <span className="absolute -top-3 left-8 px-3 py-1 bg-foreground text-primary-foreground text-xs font-mono uppercase tracking-widest rounded-[10px]">
-                  Most Popular
+                  {t("mostPopular")}
                 </span>
               )}
 
@@ -138,10 +141,10 @@ export function PricingSection() {
                     <span className="font-display text-5xl lg:text-6xl text-foreground">
                       ${isAnnual ? plan.price.annual : plan.price.monthly}
                     </span>
-                    <span className="text-muted-foreground">/month</span>
+                    <span className="text-muted-foreground">{t("perMonth")}</span>
                   </div>
                 ) : (
-                  <span className="font-display text-4xl text-foreground">Custom</span>
+                  <span className="font-display text-4xl text-foreground">{t("custom")}</span>
                 )}
               </div>
 
@@ -172,9 +175,9 @@ export function PricingSection() {
 
         {/* Bottom Note */}
         <p className="mt-12 text-center text-sm text-muted-foreground">
-          All plans include automatic updates, HTTPS, and DDoS protection.{" "}
+          {t("bottomNotePrefix")}{" "}
           <a href="#" className="underline underline-offset-4 hover:text-foreground transition-colors">
-            Compare all features
+            {t("compareFeatures")}
           </a>
         </p>
       </div>
