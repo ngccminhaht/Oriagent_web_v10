@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: 'Oriagent - The AI Platform to Build and Ship',
   description: 'The AI platform for teams who ship. Build, deploy, and scale with unprecedented velocity.',
   generator: 'v0.app',
+  icons: {
+    icon: '/oriagent-favicon.svg',
+  },
 }
 
 import { NextIntlClientProvider } from 'next-intl';
