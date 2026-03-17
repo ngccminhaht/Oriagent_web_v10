@@ -151,54 +151,108 @@
         "eyebrow": "Pricing",
         "titleLine1": "Simple, transparent",
         "titleLine2": "pricing",
-        "description": "Start free and scale as you grow. No hidden fees, no surprises.",
+        "description": "Select the plan that best fits your team's needs.",
         "monthly": "Monthly",
         "annual": "Annual",
-        "saveLabel": "Save 17%",
+        "saveLabel": "Save 15%",
         "mostPopular": "Most Popular",
         "custom": "Custom",
         "perMonth": "/month",
         "compareFeatures": "Compare all features",
         "bottomNotePrefix": "All plans include automatic updates, HTTPS, and DDoS protection.",
+        "monthlyLimitsLabel": "Monthly Limits",
+        "supportSlaLabel": "Support / SLA",
+        "coreFeaturesLabel": "Core Features",
         "plans": {
-            "starter": {
-                "name": "Starter",
-                "description": "For individuals and small projects",
-                "features": [
-                    "Up to 3 projects",
-                    "1GB storage",
-                    "Community support",
-                    "Basic analytics",
-                    "SSL certificates"
+            "free": {
+                "name": "Free",
+                "description": "For individuals and experiments",
+                "monthlyLimits": [
+                    "100 actions Workflow",
+                    "10 actions Text Generator",
+                    "1,000 Messenger credits Agent Mode",
+                    "1,000 Messenger credits Chatflow Mode",
+                    "5 agents",
+                    "1 admin user",
+                    "5 GB Knowledge Vector DB"
+                ],
+                "supportSla": "Community forum only – no formal SLA",
+                "coreFeatures": [
+                    "Zero-shot API discovery (up to 5 endpoints)",
+                    "No-code visual composer",
+                    "Basic RAG (single vector)",
+                    "Access to 5 pre-built agents",
+                    "Read-only audit log"
                 ],
                 "cta": "Start free"
             },
-            "pro": {
-                "name": "Pro",
-                "description": "For growing teams and businesses",
-                "features": [
-                    "Unlimited projects",
-                    "100GB storage",
-                    "Priority support",
-                    "Advanced analytics",
-                    "Custom domains",
-                    "Team collaboration",
-                    "API access"
+            "starter": {
+                "name": "Starter",
+                "description": "For small teams getting started",
+                "monthlyLimits": [
+                    "500 actions Workflow",
+                    "50 actions Text Generator",
+                    "5,000 Messenger credits Agent Mode",
+                    "5,000 Messenger credits Chatflow Mode",
+                    "50 agents",
+                    "50 Admin user + viewer",
+                    "5 GB Knowledge Vector DB"
+                ],
+                "supportSla": "Email support ≤ 24 h, business-hour live chat",
+                "coreFeatures": [
+                    "All Free features plus:",
+                    "Multi-agent orchestration (max 3 agents)",
+                    "Knowledge-graph RAG (≤ 5k docs)",
+                    "Prompt Studio & Evaluation Studio",
+                    "Vendor credits + $14/mo (OpenAI / Claude / Google)"
+                ],
+                "cta": "Start trial"
+            },
+            "growth": {
+                "name": "Growth",
+                "description": "For scaling teams and businesses",
+                "monthlyLimits": [
+                    "250,000 actions Workflow",
+                    "500 actions Text Generator",
+                    "100,000 Messenger credits Agent Mode",
+                    "100,000 Messenger credits Chatflow Mode",
+                    "100 agents",
+                    "100 Admin user + viewer",
+                    "50 GB Knowledge Vector DB"
+                ],
+                "supportSla": "Community forum only – no formal SLA",
+                "coreFeatures": [
+                    "All Starter features plus:",
+                    "Unlimited RAG (multi-vector, teachable)",
+                    "Enterprise semantic search",
+                    "Process Automation Studio",
+                    "AI Security + Governance (RBAC)",
+                    "Observability Dashboard",
+                    "Vendor credits + $75/mo (higher tier LLMs)",
+                    "Dedicated onboarding specialist (2 h)"
                 ],
                 "cta": "Start trial"
             },
             "enterprise": {
                 "name": "Enterprise",
                 "description": "For large-scale operations",
-                "features": [
-                    "Everything in Pro",
-                    "Unlimited storage",
-                    "24/7 dedicated support",
-                    "Custom integrations",
-                    "SLA guarantee",
-                    "On-premise option",
-                    "Security audit",
-                    "Custom contracts"
+                "monthlyLimits": [
+                    "Unlimited actions Workflow",
+                    "Unlimited actions Text Generator",
+                    "Unlimited Messenger credits",
+                    "Unlimited admin user + viewer",
+                    "Unlimited agents",
+                    "100 GB+ Knowledge Vector DB"
+                ],
+                "supportSla": "Community forum only – no formal SLA",
+                "coreFeatures": [
+                    "All Growth features plus:",
+                    "Hybrid deployment (cloud, VPC, on-prem)",
+                    "Custom model hosting (bring your GPU/LLM)",
+                    "Advanced guardrails & compliance (HIPAA, GDPR, ISO 27001)",
+                    "Dedicated FDE team – 120 h/mo",
+                    "Premium support: 1-hour SLA, 24/7 phone",
+                    "Custom data-residency (EU, US, APAC)"
                 ],
                 "cta": "Contact sales"
             }

@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata } from 'next'
 import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import '../globals.css'
 
 const instrumentSans = Instrument_Sans({
@@ -34,6 +35,8 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/src/i18n';
 
+import Chatbot from '@/components/landing/chatbot'
+
 export default async function RootLayout({
   children,
   params
@@ -59,6 +62,7 @@ export default async function RootLayout({
           {children}
         </NextIntlClientProvider>
         <Analytics />
+        <Chatbot />
       </body>
     </html>
   )

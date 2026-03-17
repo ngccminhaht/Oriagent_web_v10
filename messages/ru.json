@@ -152,54 +152,108 @@
         "eyebrow": "Цены",
         "titleLine1": "Простое, прозрачное",
         "titleLine2": "ценообразование",
-        "description": "Начните бесплатно и масштабируйтесь по мере роста. Никаких скрытых платежей или сюрпризов.",
+        "description": "Выберите план, который лучше всего подходит вашей команде.",
         "monthly": "Ежемесячно",
         "annual": "Ежегодно",
-        "saveLabel": "Скидка 17%",
+        "saveLabel": "Скидка 15%",
         "mostPopular": "Самый популярный",
         "custom": "Индивидуально",
         "perMonth": "/мес",
         "compareFeatures": "Сравнить все функции",
         "bottomNotePrefix": "Во все планы включены автоматические обновления, HTTPS и защита от DDoS.",
+        "monthlyLimitsLabel": "Месячные лимиты",
+        "supportSlaLabel": "Поддержка / SLA",
+        "coreFeaturesLabel": "Основные возможности",
         "plans": {
-            "starter": {
-                "name": "Стартовый",
-                "description": "Для частных лиц и небольших проектов",
-                "features": [
-                    "До 3-х проектов",
-                    "1 ГБ хранилища",
-                    "Поддержка сообщества",
-                    "Базовая аналитика",
-                    "SSL сертификаты"
+            "free": {
+                "name": "Free",
+                "description": "Для частных лиц и экспериментов",
+                "monthlyLimits": [
+                    "100 actions Workflow",
+                    "10 actions Text Generator",
+                    "1,000 Messenger credits Agent Mode",
+                    "1,000 Messenger credits Chatflow Mode",
+                    "5 agents",
+                    "1 admin user",
+                    "5 GB Knowledge Vector DB"
+                ],
+                "supportSla": "Community forum only – no formal SLA",
+                "coreFeatures": [
+                    "Zero-shot API discovery (up to 5 endpoints)",
+                    "No-code visual composer",
+                    "Basic RAG (single vector)",
+                    "Access to 5 pre-built agents",
+                    "Read-only audit log"
                 ],
                 "cta": "Начать бесплатно"
             },
-            "pro": {
-                "name": "Профи",
+            "starter": {
+                "name": "Starter",
+                "description": "Для небольших команд",
+                "monthlyLimits": [
+                    "500 actions Workflow",
+                    "50 actions Text Generator",
+                    "5,000 Messenger credits Agent Mode",
+                    "5,000 Messenger credits Chatflow Mode",
+                    "50 agents",
+                    "50 Admin user + viewer",
+                    "5 GB Knowledge Vector DB"
+                ],
+                "supportSla": "Email support ≤ 24 h, business-hour live chat",
+                "coreFeatures": [
+                    "All Free features plus:",
+                    "Multi-agent orchestration (max 3 agents)",
+                    "Knowledge-graph RAG (≤ 5k docs)",
+                    "Prompt Studio & Evaluation Studio",
+                    "Vendor credits + $14/mo (OpenAI / Claude / Google)"
+                ],
+                "cta": "Начать пробный период"
+            },
+            "growth": {
+                "name": "Growth",
                 "description": "Для растущих команд и бизнеса",
-                "features": [
-                    "Безлимитные проекты",
-                    "100 ГБ хранилища",
-                    "Приоритетная поддержка",
-                    "Продвинутая аналитика",
-                    "Собственные домены",
-                    "Совместная работа",
-                    "Доступ к API"
+                "monthlyLimits": [
+                    "250,000 actions Workflow",
+                    "500 actions Text Generator",
+                    "100,000 Messenger credits Agent Mode",
+                    "100,000 Messenger credits Chatflow Mode",
+                    "100 agents",
+                    "100 Admin user + viewer",
+                    "50 GB Knowledge Vector DB"
+                ],
+                "supportSla": "Community forum only – no formal SLA",
+                "coreFeatures": [
+                    "All Starter features plus:",
+                    "Unlimited RAG (multi-vector, teachable)",
+                    "Enterprise semantic search",
+                    "Process Automation Studio",
+                    "AI Security + Governance (RBAC)",
+                    "Observability Dashboard",
+                    "Vendor credits + $75/mo (higher tier LLMs)",
+                    "Dedicated onboarding specialist (2 h)"
                 ],
                 "cta": "Начать пробный период"
             },
             "enterprise": {
-                "name": "Корпоративный",
+                "name": "Enterprise",
                 "description": "Для крупномасштабных операций",
-                "features": [
-                    "Всё, что в Профи",
-                    "Безлимитное хранилище",
-                    "Круглосуточная поддержка",
-                    "Индивидуальные интеграции",
-                    "Гарантия SLA",
-                    "Размещение On-premise",
-                    "Аудит безопасности",
-                    "Индивидуальные контракты"
+                "monthlyLimits": [
+                    "Unlimited actions Workflow",
+                    "Unlimited actions Text Generator",
+                    "Unlimited Messenger credits",
+                    "Unlimited admin user + viewer",
+                    "Unlimited agents",
+                    "100 GB+ Knowledge Vector DB"
+                ],
+                "supportSla": "Community forum only – no formal SLA",
+                "coreFeatures": [
+                    "All Growth features plus:",
+                    "Hybrid deployment (cloud, VPC, on-prem)",
+                    "Custom model hosting (bring your GPU/LLM)",
+                    "Advanced guardrails & compliance (HIPAA, GDPR, ISO 27001)",
+                    "Dedicated FDE team – 120 h/mo",
+                    "Premium support: 1-hour SLA, 24/7 phone",
+                    "Custom data-residency (EU, US, APAC)"
                 ],
                 "cta": "Связаться с отделом продаж"
             }
